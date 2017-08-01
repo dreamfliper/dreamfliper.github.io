@@ -1,41 +1,60 @@
 import React,{ Component } from 'react';
 import { Route, Link } from 'react-router-dom'
-import {Tab, Tabs} from 'react-toolbox/lib/tabs'
 import Home from './home'
 import About from './about'
 import Project from './projects'
 import Resume from './resume'
+import { Menu } from 'antd'
+
+const menustyle={
+	'display': 'flex',
+	'justify-content':'center'
+}
 
 class App extends Component {
-	state = {
-		index: 1,
-	}
 
-	handleTabChange = (index) => {
-		this.setState({index});
-	}
+  state = {
+    current: 'home',
+  }
 
-	handleActive = () => {
-		console.log('Special one activated');
-	}
+  handleClick = (e) => {
+    console.log('click ', e);
+    this.setState({
+      current: e.key,
+    });
+  }
 	
 	render() {
 		return (
 			<div>
-				<header>
-					<Link to="/">Home</Link>
-					<Link to="/about">About</Link>
-					<Link to="/projects">Project</Link>
-					<Link to="/resume">Resume</Link>
-				</header>
-
-				<Tabs index={this.state.index} onChange={this.handleTabChange}>
-					<Tab label='Primary'><small>Primary content</small></Tab>
-					<Tab label='Secondary' onActive={this.handleActive}><small>Secondary content</small></Tab>
-					<Tab label='Third' disabled><small>Disabled content</small></Tab>
-					<Tab label='Fourth' hidden><small>Fourth content hidden</small></Tab>
-					<Tab label='Fifth'><small>Fifth content</small></Tab>
-				</Tabs>
+				{
+				// <header>
+				// 	<Link to="/">Home</Link>
+				// 	<Link to="/about">About</Link>
+				// 	<Link to="/projects">Project</Link>
+				// 	<Link to="/resume">Resume</Link>
+				// </header>
+				}
+				
+				<Menu
+        onClick={this.handleClick}
+        selectedKeys={[this.state.current]}
+        mode="horizontal"
+        style={menustyle}
+      	>
+	      	<Menu.Item key="home">
+						<Link to="/">Home</Link>
+	        </Menu.Item>
+	      	<Menu.Item key="about">
+						<Link to="/about">About</Link>
+	        </Menu.Item>
+	      	<Menu.Item key="projects">
+						<Link to="/projects">Projects</Link>
+	        </Menu.Item>
+	      	<Menu.Item key="resume">
+						<Link to="/resume">Resume</Link>
+	        </Menu.Item>
+        </Menu>
 
 				<main>
 					<Route exact path="/" component={Home} />
