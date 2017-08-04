@@ -6,11 +6,6 @@ import Project from './projects'
 import Resume from './resume'
 import { Menu } from 'antd'
 
-const menustyle={
-	'display': 'flex',
-	'justify-content':'center'
-}
-
 class App extends Component {
 
   state = {
@@ -40,7 +35,7 @@ class App extends Component {
         onClick={this.handleClick}
         selectedKeys={[this.state.current]}
         mode="horizontal"
-        style={menustyle}
+        style={{'display': 'flex','justify-content':'center'}}
       	>
 	      	<Menu.Item key="home">
 						<Link to="/">Home</Link>
