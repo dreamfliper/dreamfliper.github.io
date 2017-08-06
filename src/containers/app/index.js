@@ -5,6 +5,19 @@ import About from './about'
 import Project from './projects'
 import Resume from './resume'
 import { Menu } from 'antd'
+import './lib/intergram/js/widget.js'
+
+window.intergramId = "160411797"
+window.intergramCustomizations = {
+        titleClosed: 'Online Chat',
+        titleOpen: 'dreamfliper on telegram',
+        introMessage: 'First message when the user opens the chat for the first time',
+        autoResponse: 'A message that is sent immediately after the user sends its first message',
+        autoNoResponse: 'A message that is sent one minute after the user sends its first message ' +
+                        'and no response was received',
+        mainColor: "#555", 
+        alwaysUseFloatingButton: false 
+    }
 
 class App extends Component {
 

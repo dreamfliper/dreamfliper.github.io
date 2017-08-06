@@ -1,0 +1,71 @@
+.gravatar{
+  border-radius: 10px;
+  display: block;
+  margin: auto;
+}
+
+#social {
+  text-align: center;
+}
+
+.smGlobalBtn{ /* global button class */
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    padding: 0px;
+    text-decoration: none;
+    text-align: center;
+    color: #fff;
+    font-size: 25px;
+    font-weight: normal;
+    line-height: 2em;
+    border-radius: 25px;
+    -moz-border-radius:25px;
+    -webkit-border-radius:25px;
+}
+
+.facebookBtn{
+  .buttonMixin("\f09a";#4060A5)
+}
+.googleplusBtn{
+  .buttonMixin("\f0d5";#e64522)
+}
+.linkedinBtn{
+  .buttonMixin("\f0e1";#0094BC)
+}
+.pinterestBtn{
+  .buttonMixin("\f0d2";#cb2027)
+}
+.githubBtn{
+  .buttonMixin("\f113";#333333)
+}
+.rssBtn{
+  .buttonMixin("\f09e";#e88845)
+}
+.telegramBtn{
+  .buttonMixin("\f2c6";#0088cc)
+}
+.steamBtn{
+  .buttonMixin("\f1b6";#183D58)
+}
+.raindropBtn{
+  .buttonMixin("\f0c2";#329EF3)
+}
+.pocketBtn{
+  .buttonMixin("\f265";#d5374b)
+}
+
+.buttonMixin(@content; @color){
+  color:#555;
+  &:before{
+    font-family: "FontAwesome";
+    content: @content; 
+  }
+  &:hover{
+    color:#fff;
+    background: @color;
+    transition: all .3s ease-in-out;
+  }
+}

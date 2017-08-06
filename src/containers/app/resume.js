@@ -2,9 +2,10 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { updateResume } from '../../modules/counter'
 import store from '../../store'
-import Markdown from 'react-remarkable'
+import Markdown from 'react-mark'
 import Dropbox from 'dropbox'
-import { Row, Col } from 'antd';
+import { Row, Col } from 'antd'
+// import night from './night.css'
 
 class Resume extends Component {
 
@@ -22,7 +23,7 @@ class Resume extends Component {
 		return (
 			<Row>
 				<Col sm={{ span:21, offset:2 }} md={{ span:18, offset:3 }} lg={{ span:18, offset:4 }}>
-					<Markdown source={this.props.resumeSource} />
+					<Markdown text={this.props.resumeSource}/>
 				</Col>
 			</Row>
 		)

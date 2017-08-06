@@ -8,8 +8,14 @@ body {
   font-family: -apple-system, 微軟正黑體, "Segoe UI", Helvetica, Arial, sans-serif;
   font-size: 1rem;
   line-height: 1.5;
+  display: flex;
+  justify-content:center;
+}
+li{
+	list-style-type: disc;
+	margin-left: 30px;
+}
+ul{
+  margin-left:10px;
 }
 
-button:disabled {
-  opacity: 0.5;
-}
