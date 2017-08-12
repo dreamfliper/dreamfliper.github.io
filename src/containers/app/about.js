@@ -4,21 +4,22 @@ import styles from './about.less'
 import Gravatar from 'react-gravatar'
 
 const About = () => (
-  <div>
+  <div className='back' >
     <h1>About Page</h1>
     <p>Did you get here via Redux?</p>
-    <Gravatar email="dreamfliper@gmail.com" size={150} className={styles.gravatar} />
+    <Gravatar email="dreamfliper@gmail.com" size={200} className={styles.gravatar} />
+    <p id={styles.comment} >Gravatar</p>
 		{/* eslint-disable */}
-		<div id="social">
-			<a className={`${styles.smGlobalBtn} ${styles.facebookBtn}`} href='http://www.facebook.com/dreamfliper' />
-			<a className={`${styles.smGlobalBtn} ${styles.githubBtn} `} href='http://github.com/dreamfliper' />
-			<a className={`${styles.smGlobalBtn} ${styles.telegramBtn} `} href='http://t.me/dreamfliper' />
-			<a className={`${styles.smGlobalBtn} ${styles.googleplusBtn} `} href='http://plus.google.com/+%E8%A8%B1%E4%BA%A8%E7%99%BE' />
-			<a className={`${styles.smGlobalBtn} ${styles.pinterestBtn} `} href='http://www.pinterest.com/dreamfliper/' />
-			<a className={`${styles.smGlobalBtn} ${styles.steamBtn} `} href='http://steamcommunity.com/id/dreamfliper' />
-			<a className={`${styles.smGlobalBtn} ${styles.linkedinBtn} `} href='http://www.linkedin.com/in/henpai-hsu-76688282/' />
-			<a className={`${styles.smGlobalBtn} ${styles.raindropBtn} `} href='https://raindrop.io/user/129968' />
-			<a className={`${styles.smGlobalBtn} ${styles.pocketBtn} `} href='https://getpocket.com/@dreamfliper' />
+		<div id={styles.social} >
+			<a className={`${styles.smGlobalBtn} ${styles.facebookBtn}`} href='//www.facebook.com/dreamfliper' />
+			<a className={`${styles.smGlobalBtn} ${styles.githubBtn} `} href='//github.com/dreamfliper' />
+			<a className={`${styles.smGlobalBtn} ${styles.telegramBtn} `} href='//t.me/dreamfliper' />
+			<a className={`${styles.smGlobalBtn} ${styles.googleplusBtn} `} href='//plus.google.com/+%E8%A8%B1%E4%BA%A8%E7%99%BE' />
+			<a className={`${styles.smGlobalBtn} ${styles.pinterestBtn} `} href='//www.pinterest.com/dreamfliper/' />
+			<a className={`${styles.smGlobalBtn} ${styles.steamBtn} `} href='//steamcommunity.com/id/dreamfliper' />
+			<a className={`${styles.smGlobalBtn} ${styles.linkedinBtn} `} href='//www.linkedin.com/in/henpai-hsu-76688282/' />
+			<a className={`${styles.smGlobalBtn} ${styles.raindropBtn} `} href='//raindrop.io/user/129968' />
+			<a className={`${styles.smGlobalBtn} ${styles.pocketBtn} `} href='//getpocket.com/@dreamfliper' />
 		</div>
 		{/* eslint-enable */}
 	</div>
