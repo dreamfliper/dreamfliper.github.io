@@ -43,16 +43,16 @@ class App extends Component {
 				style={{'display': 'flex','justifyContent':'center','backgroundColor':'transparent'}}
 				>
 					<Menu.Item key="about" >
-						<Link to="/">About</Link>
+						<Link style={{'text-decoration': 'none'}} to="/">About</Link>
 					</Menu.Item>
 					<Menu.Item key="projects">
-						<Link to="/projects">Projects</Link>
+						<Link style={{'text-decoration': 'none'}} to="/projects">Projects</Link>
 					</Menu.Item>
 					<Menu.Item key="resume">
-						<Link to="/resume">Resume</Link>
+						<Link style={{'text-decoration': 'none'}} to="/resume">Resume</Link>
 					</Menu.Item>					
 					<Menu.Item key="note">
-						<Link to="/note">note</Link>
+						<Link style={{'text-decoration': 'none'}} to="/note">Notes</Link>
 					</Menu.Item>
 				</Menu>
 

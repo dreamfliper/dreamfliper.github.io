@@ -1,6 +1,18 @@
 import React,{ Component } from 'react';
 import Dropbox from 'dropbox'
 import { Link } from 'react-router-dom'
+import styled from 'styled-components'
+
+const Title = styled.section`
+	font-size:40px;
+	width: 80vh;
+	display: flex;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	text-decoration: none;
+`;
 
 class Note extends Component {
 	state = {
@@ -29,7 +41,7 @@ class Note extends Component {
 				<ul>
 				{
 					this.state.filelist.map( (file,i) =>
-						<li key={i}><Link to={`/note/${file}`} >{file}</Link></li>
+						<Title key={i}><Link style={{'width': '80vh','text-decoration': 'none'}} to={`/note/${file}`} >{file}</Link></Title>
 					)
 				}
 				</ul>

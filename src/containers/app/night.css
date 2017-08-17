@@ -66,7 +66,6 @@ input,
 select,
 textarea {
     font-style: normal;
-    line-height: 1.5rem;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
@@ -97,7 +96,7 @@ h1 {
     /* 36px */
     line-height: 2.5rem;
     /* 40px */
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.2rem;
     /* 24px */
     letter-spacing: -1.5px;
 }
@@ -107,7 +106,7 @@ h2 {
     /* 24px */
     line-height: 1.7rem;
     /* 30px */
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.2rem;
     /* 24px */
     letter-spacing: -1px;
     font-weight: bold;
@@ -118,7 +117,7 @@ h3 {
     /* 18px */
     line-height: 1.45rem;
     /* 24px */
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.2rem;
     /* 24px */
     letter-spacing: -1px;
     font-weight: bold;
@@ -129,7 +128,7 @@ h4 {
     /* 16px */
     line-height: 1.375rem;
     /* 22px */
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.2rem;
     /* 24px */
     color: white;
 }
@@ -139,7 +138,7 @@ h5 {
     /* 16px */
     line-height: 1.25rem;
     /* 22px */
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.2rem;
     /* 24px */
     font-weight: bold;
 }
@@ -228,7 +227,7 @@ iframe,
 .wp-audio-shortcode,
 .wp-video-shortcode {
     margin-top: 0;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.2rem;
     /* 24px */
 }
 
@@ -604,7 +603,6 @@ td {
     border-bottom: 1px dashed #ccc;
     background: transparent;
     padding-bottom: 0.6em;
-    line-height: 1.5em;
 }
 
 .btn,

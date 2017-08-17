@@ -27,6 +27,10 @@ class Notecontent extends Component{
 			});
 	}
 
+	componentWillUnmount(){
+		store.dispatch(updateResume('waiting for connection'))
+	}
+	
 	render(){
 		return (
 			<Row>

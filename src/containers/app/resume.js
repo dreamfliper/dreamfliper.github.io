@@ -23,6 +23,10 @@ class Resume extends Component {
 			console.log(err)
 		}
 	}
+	
+	componentWillUnmount(){
+		store.dispatch(updateResume('waiting for connection'))
+	}
 
 	render() {
 		return (

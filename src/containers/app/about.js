@@ -4,9 +4,8 @@ import styles from './about.less'
 import Gravatar from 'react-gravatar'
 
 const About = () => (
-  <div className='back' >
-    <h1>About Page</h1>
-    <p>Did you get here via Redux?</p>
+  <div>
+  	<h1 className={styles.center} >Henpai Hsu</h1>
     <Gravatar email="dreamfliper@gmail.com" size={200} className={styles.gravatar} />
     <p id={styles.comment} >Gravatar</p>
 		{/* eslint-disable */}
