@@ -3,8 +3,10 @@ import { Route, Link } from 'react-router-dom'
 import About from './about'
 import Project from './projects'
 import Resume from './resume'
+import Note from './note'
 import { Menu } from 'antd'
 import './lib/intergram/js/widget.js'
+import Notecontent from './notecontent'
 
 window.intergramId = "160411797"
 window.intergramCustomizations = {
@@ -25,7 +27,6 @@ class App extends Component {
 	}
 
 	handleClick = (e) => {
-		console.log('click ', e);
 		this.setState({
 			current: e.key,
 		});
@@ -39,9 +40,9 @@ class App extends Component {
 				onClick={this.handleClick}
 				selectedKeys={[this.state.current]}
 				mode="horizontal"
-				style={{'display': 'flex','justify-content':'center'}}
+				style={{'display': 'flex','justifyContent':'center','backgroundColor':'transparent'}}
 				>
-					<Menu.Item key="about">
+					<Menu.Item key="about" >
 						<Link to="/">About</Link>
 					</Menu.Item>
 					<Menu.Item key="projects">
@@ -49,6 +50,9 @@ class App extends Component {
 					</Menu.Item>
 					<Menu.Item key="resume">
 						<Link to="/resume">Resume</Link>
+					</Menu.Item>					
+					<Menu.Item key="note">
+						<Link to="/note">note</Link>
 					</Menu.Item>
 				</Menu>
 
@@ -56,6 +60,8 @@ class App extends Component {
 					<Route exact path="/" component={About} />
 					<Route exact path="/resume" component={Resume} />
 					<Route exact path="/projects" component={Project} />
+					<Route exact path="/note" component={Note} />
+					<Route exact path="/note/:name" component={Notecontent} />
 				</main>
 			</div>
 		);
