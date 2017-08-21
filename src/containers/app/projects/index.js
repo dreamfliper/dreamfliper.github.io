@@ -1,7 +1,7 @@
 import React from 'react'
 import flashlight from './flashlight.png'
 import subTrans from './subTrans.png'
-import styles from './about.less'
+import styles from '../about/about.less'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 // import withScrollReveal from 'react-scrollreveal'
@@ -31,7 +31,7 @@ const Project = ({animationContainerReference}) => (
 					合併 macOS 上多個視窗成為一個，變成好幾個分頁共用一個視窗 <br/>
 				</p>
 				<a className={`${styles.smSquareBtn} ${styles.githubaltBtn} `} href='//github.com/dreamfliper/Flashlight/tree/master/PluginDirectories/1/merge.bundle' > </a>
-				<Link className={`${styles.smrSquareBtn} ${styles.textfileBtn} `} to={`/note/flashlight`} />
+				<Link className={`${styles.smrSquareBtn} ${styles.textfileBtn} `} to={`/note/Flashlight插件開發`} />
 			</div>
 	</Wrapper>
 	
@@ -43,7 +43,7 @@ const Project = ({animationContainerReference}) => (
 				<p>一個以 OpenCC 作為簡繁轉換的圖形介面工具</p>
 				<p>支援多種編碼，現代外觀，批次對文字檔簡繁轉換</p>
 				<a className={`${styles.smSquareBtn} ${styles.githubaltBtn} `} href='//github.com/dreamfliper/subTrans' > </a>
-				<Link className={`${styles.smrSquareBtn} ${styles.textfileBtn} `} to={`/note/subTrans`} />
+				<Link className={`${styles.smrSquareBtn} ${styles.textfileBtn} `} to={`/note/subTrans開發與Vue入門`} />
 			</div>			
 			<a className='sr-item--sequence' href="//github.com/dreamfliper/subTrans">
 				<img src={subTrans} style={{ width: 150 }} alt='subTrans' />

@@ -1,15 +1,14 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { updateResume } from '../../modules/counter'
-import store from '../../store'
+import { updateResume } from '../../../modules/counter'
+import store from '../../../store'
 import Markdown from 'react-mark'
 import Dropbox from 'dropbox'
 import { Row, Col } from 'antd'
-import './night.css'
 
 class Resume extends Component {
 
-	componentDidMount() {
+	componentWillMount() {
 		let dbx = new Dropbox({accessToken:'UVoVCEKzMf4AAAAAAAAQQpNz6Ya0Bu0cAEqT_pHWX0iCyqgkmrsSiQeP1Dho6gQT'});
 		try{
 			(async ()=>{
@@ -32,7 +31,7 @@ class Resume extends Component {
 		return (
 			<Row>
 				<Col sm={{ span:21, offset:2 }} md={{ span:18, offset:3 }} lg={{ span:18, offset:4 }}>
-					<Markdown text={this.props.resumeSource} />
+					<Markdown  text={this.props.resumeSource} />
 				</Col>
 			</Row>
 		)

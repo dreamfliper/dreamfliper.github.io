@@ -1,5 +1,5 @@
 import React from 'react'
-import './lib/font-awesome-4.7.0/css/font-awesome.min.css'
+import '../lib/font-awesome-4.7.0/css/font-awesome.min.css'
 import styles from './about.less'
 import Gravatar from 'react-gravatar'
 

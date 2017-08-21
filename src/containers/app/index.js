@@ -4,9 +4,10 @@ import About from './about'
 import Project from './projects'
 import Resume from './resume'
 import Note from './note'
+import Notecontent from './note/notecontent'
 import { Menu } from 'antd'
 import './lib/intergram/js/widget.js'
-import Notecontent from './notecontent'
+import './lib/night.css'
 
 window.intergramId = "160411797"
 window.intergramCustomizations = {
@@ -43,16 +44,16 @@ class App extends Component {
 				style={{'display': 'flex','justifyContent':'center','backgroundColor':'transparent'}}
 				>
 					<Menu.Item key="about" >
-						<Link style={{'text-decoration': 'none'}} to="/">About</Link>
+						<Link style={{'textDecoration': 'none'}} to="/">About</Link>
 					</Menu.Item>
 					<Menu.Item key="projects">
-						<Link style={{'text-decoration': 'none'}} to="/projects">Projects</Link>
+						<Link style={{'textDecoration': 'none'}} to="/projects">Projects</Link>
 					</Menu.Item>
 					<Menu.Item key="resume">
-						<Link style={{'text-decoration': 'none'}} to="/resume">Resume</Link>
+						<Link style={{'textDecoration': 'none'}} to="/resume">Resume</Link>
 					</Menu.Item>					
 					<Menu.Item key="note">
-						<Link style={{'text-decoration': 'none'}} to="/note">Notes</Link>
+						<Link style={{'textDecoration': 'none'}} to="/note">Notes</Link>
 					</Menu.Item>
 				</Menu>
 

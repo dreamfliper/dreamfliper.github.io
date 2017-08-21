@@ -66,7 +66,7 @@ input,
 select,
 textarea {
     font-style: normal;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Helvetica Neue","微軟正黑體" , Helvetica, Arial, sans-serif;
 }
 
 hr {
@@ -81,7 +81,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: "Lucida Grande", "Corbal", Georgia, serif;
+    font-family: "Lucida Grande","noto sans cjk tc light" , "Corbal", Georgia, serif;
     font-weight: normal;
     clear: both;
     -ms-word-wrap: break-word;
