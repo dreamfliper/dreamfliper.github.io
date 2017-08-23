@@ -12,7 +12,7 @@ class Resume extends Component {
 		let dbx = new Dropbox({accessToken:'UVoVCEKzMf4AAAAAAAAQQpNz6Ya0Bu0cAEqT_pHWX0iCyqgkmrsSiQeP1Dho6gQT'});
 		try{
 			(async ()=>{
-			const {fileBlob} = await dbx.sharingGetSharedLinkFile({url: 'https://www.dropbox.com/s/zmkkxstuxje515o/Resume.md?dl=0'})
+			const {fileBlob} = await dbx.filesDownload({path: '/Resume.md'})
 			let filebuffer = new FileReader()
 			filebuffer.readAsText(fileBlob)
 			filebuffer.onload = evt => 
