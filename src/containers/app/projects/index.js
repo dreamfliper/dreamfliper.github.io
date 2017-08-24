@@ -1,10 +1,11 @@
 import React from 'react'
 import flashlight from './flashlight.png'
 import subTrans from './subTrans.png'
+import BLEcontroller from './BLEController.png'
 import styles from '../about/about.less'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-// import withScrollReveal from 'react-scrollreveal'
+import withScrollReveal from '../lib/react-scrollreveal'
 
 const Wrapper = styled.section`
 	height: 100vh;
@@ -52,7 +53,7 @@ const Project = ({animationContainerReference}) => (
 
 	<Wrapper>
 		<a className='sr-item--sequence' href="//github.com/dreamfliper/subTrans">
-			<img src={subTrans} style={{ width: 150 }} alt='subTrans' />
+			<img src={BLEcontroller} style={{ width: 150 }} alt='subTrans' />
 		</a>
 		<div className='sr-item-right'>
 			<h2> </h2>
@@ -66,40 +67,36 @@ const Project = ({animationContainerReference}) => (
 
 		<b>Demos:mashingopencc, react-video-modal-list</b>
 
-	{
-		// <ProjectCard title='flashlight' />
-		// <ProjectCard title='subTrans' />
-	}
 </div>
 )
 
-export default Project
-// withScrollReveal([
-//   {
-//     selector: '.sr-item-left',
-//     options: {
-//       reset: true,
-//       distance: '20%',
-//       origin: 'left',
-//       duration: 500,
-//     },
-//   },
-//   {
-//     selector: '.sr-item-right',
-//     options: {
-//       reset: true,
-//       distance: '20%',
-//       origin: 'right',
-//       duration: 500,
-//     },
+export default //Project
+withScrollReveal([
+  {
+    selector: '.sr-item-left',
+    options: {
+      reset: true,
+      distance: '20%',
+      origin: 'left',
+      duration: 500,
+    },
+  },
+  {
+    selector: '.sr-item-right',
+    options: {
+      reset: true,
+      distance: '20%',
+      origin: 'right',
+      duration: 500,
+    },
   
-//   },
-//   {
-//     selector: '.sr-item--sequence',
-//     options: {
-//       reset: true,
-//       delay: 400,
-//       useDelay: 'once'
-//     },
-//   }
-// ])(Project) 
+  },
+  {
+    selector: '.sr-item--sequence',
+    options: {
+      reset: true,
+      delay: 400,
+      useDelay: 'once'
+    },
+  }
+])(Project) 
