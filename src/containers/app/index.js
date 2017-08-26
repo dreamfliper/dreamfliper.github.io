@@ -5,7 +5,10 @@ import Project from './projects'
 import Resume from './resume'
 import Note from './note'
 import Notecontent from './note/notecontent'
+import { connect } from 'react-redux'
 import { Menu } from 'antd'
+import { setCurrentPage } from '../../modules/counter'
+import store from '../../store'
 import './lib/intergram/js/widget.js'
 import './lib/night.css'
 
@@ -28,9 +31,7 @@ class App extends Component {
 	}
 
 	handleClick = (e) => {
-		this.setState({
-			current: e.key,
-		});
+		store.dispatch(setCurrentPage(e.key))
 	}
 	
 	render() {
@@ -39,7 +40,7 @@ class App extends Component {
 				
 				<Menu
 				onClick={this.handleClick}
-				selectedKeys={[this.state.current]}
+				selectedKeys={[this.props.currentPage]}
 				mode="horizontal"
 				style={{'display': 'flex','justifyContent':'center','backgroundColor':'transparent'}}
 				>
@@ -69,4 +70,11 @@ class App extends Component {
 	}
 }
 
-export default App
+const mapStateToProps = state => ({
+	currentPage: state.counter.currentPage,
+})
+
+export default connect(
+	mapStateToProps,
+)(App)
+

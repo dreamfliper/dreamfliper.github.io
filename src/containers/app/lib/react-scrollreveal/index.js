@@ -174,6 +174,7 @@ var ReactScrollreveal = function ReactScrollreveal() {
           } else {
             // remove event listeners
             // on component unmount event
+            // sr.destroy();
           }
         }
       }, {
