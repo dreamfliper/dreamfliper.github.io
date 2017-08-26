@@ -3,11 +3,13 @@ export const INCREMENT = 'counter/INCREMENT'
 export const DECREMENT_REQUESTED = 'counter/DECREMENT_REQUESTED'
 export const DECREMENT = 'counter/DECREMENT'
 export const UPDATERESUME = 'counter/UPDATERESUME'
+export const SETCURRENTPAGE = 'counter/SETCURRENTPAGE'
 
 const initialState = {
   count: 0,
   isIncrementing: false,
   isDecrementing: false,
+  currentPage:'about',
   resumeSource:'waiting for connection'
 }
 
@@ -43,6 +45,12 @@ export default (state = initialState, action) => {
       return{
         ...state,
         resumeSource:action.resume
+      }    
+
+    case SETCURRENTPAGE:
+      return{
+        ...state,
+        currentPage:action.current
       }
 
     default:
@@ -106,5 +114,12 @@ export const updateResume = resume =>{
   return{
     type:UPDATERESUME,
     resume
+  }
+}
+
+export const setCurrentPage = current =>{
+  return{
+    type:SETCURRENTPAGE,
+    current
   }
 }
