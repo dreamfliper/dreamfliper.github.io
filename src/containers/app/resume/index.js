@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
 import { updateResume } from '../../../modules/counter'
-import store from '../../../store'
 import Markdown from 'react-markdown'
 import Dropbox from 'dropbox'
 import { Row, Col } from 'antd'
@@ -16,7 +16,7 @@ class Resume extends Component {
 			let filebuffer = new FileReader()
 			filebuffer.readAsText(fileBlob)
 			filebuffer.onload = evt => 
-				store.dispatch(updateResume(evt.currentTarget.result))
+				this.props.updateResume(evt.currentTarget.result)
 			})()
 		}	catch(err) {
 			console.log(err)
@@ -24,7 +24,7 @@ class Resume extends Component {
 	}
 	
 	componentWillUnmount(){
-		store.dispatch(updateResume('waiting for connection'))
+	  this.props.updateResume('waiting for connection')
 	}
 
 	render() {
@@ -43,6 +43,11 @@ const mapStateToProps = state => ({
 	resumeSource: state.counter.resumeSource,
 })
 
+const mapDispatchToProps = dispatch => bindActionCreators({
+  updateResume,
+}, dispatch)
+
 export default connect(
 	mapStateToProps,
+	mapDispatchToProps
 )(Resume)
