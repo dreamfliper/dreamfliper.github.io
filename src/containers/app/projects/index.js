@@ -72,7 +72,7 @@ const Project = ({animationContainerReference}) => (
 </div>
 )
 
-export default //Project
+export default 
 withScrollReveal([
   {
     selector: '.sr-item-left',

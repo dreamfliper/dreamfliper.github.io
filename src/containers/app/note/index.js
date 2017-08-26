@@ -30,8 +30,8 @@ class Note extends Component {
 				// console.log(this.state.filelist)
 			})
 			.catch( (error) => {
-				console.error(error);
-			});
+				console.error(error)
+			})
 	}
 
 	render() {
