@@ -71,7 +71,7 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
-    "deploy": "gh-pages -d build -r 'git@github.com:dreamfliper/dreamfliper.github.io.git' -b master && cp public/404.html build"
+    "deploy": "gh-pages -d build -r \"git@github.com:dreamfliper/dreamfliper.github.io.git\" -b master && cp public/404.html build"
   },
   "homepage": "https://cra-redux-router-thunk.herokuapp.com",
   "jest": {
