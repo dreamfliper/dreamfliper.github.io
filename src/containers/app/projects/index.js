@@ -12,6 +12,10 @@ const Wrapper = styled.section`
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	flex-wrap: wrap;
+	@media (max-width: 900px) {
+		display: block;
+	}
 `;
 
 const Project = ({animationContainerReference}) => (
@@ -21,7 +25,6 @@ const Project = ({animationContainerReference}) => (
 				<img src={flashlight} style={{ width: 150 }} alt='flashlight' />
 			</a>
 			<div className='sr-item-right'>
-				<h1> </h1>
 				<b>
 					Merge Windows : A <a href="//flashlight.nateparrott.com">Flashlight</a> Plugin
 				</b>
@@ -38,9 +41,8 @@ const Project = ({animationContainerReference}) => (
 	
 	<Wrapper>
 			<div className='sr-item-left' >
-				<h1> </h1>
 				<b>subTrans</b>
-				<p>A GUI tool swap subtitle between tchinese and schinese, powered by electron-vue and OpenCC</p>
+				<p>A GUI tool swap subtitle between tchinese and schinese,<br/> powered by electron-vue and OpenCC</p>
 				<p>一個以 OpenCC 作為簡繁轉換的圖形介面工具</p>
 				<p>支援多種編碼，現代外觀，批次對文字檔簡繁轉換</p>
 				<a className={`${styles.smSquareBtn} ${styles.githubaltBtn} `} href='//github.com/dreamfliper/subTrans' > </a>
