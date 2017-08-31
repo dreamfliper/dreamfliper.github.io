@@ -36,10 +36,10 @@ class App extends Component {
 	render() {
 		return (
 			<div>
-				
+			
 				<Menu
 				onClick={this.handleClick}
-				selectedKeys={this.state.current}
+				selectedKeys={window.location.pathname==='/' ? 'about':window.location.pathname}
 				mode="horizontal"
 				style={{'display': 'flex','justifyContent':'center','backgroundColor':'transparent'}}
 				>
