@@ -21,8 +21,8 @@ class About extends Component {
 		  <div>
 		  	<h1 className={styles.center} >Henpai Hsu</h1>
 		    <Gravatar 
-			    onMouseOver={()=>this.onMouseOverhandler()}
-			    onMouseLeave={()=>this.onMouseLeavehandler()}
+			    onMouseOver={this.onMouseOverhandler}
+			    onMouseLeave={this.onMouseLeavehandler}
 			    email="dreamfliper@gmail.com" size={200} 
 			    className={styles.gravatar} />
 		    <p id={styles.comment} >Gravatar</p>
