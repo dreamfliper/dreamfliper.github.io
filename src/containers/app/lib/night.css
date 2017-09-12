@@ -30,8 +30,7 @@ html,
 body {
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
-    background: #363B40;
-    background: var(--bg-color);
+    background: url('./background.png');
     fill: currentColor;
 }
 
