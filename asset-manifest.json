@@ -1,14 +1,14 @@
 {
-  "main.css": "static/css/main.9c918919.css",
-  "main.css.map": "static/css/main.9c918919.css.map",
-  "main.js": "static/js/main.9d4abf10.js",
-  "main.js.map": "static/js/main.9d4abf10.js.map",
-  "static/media/BLEController.png": "static/media/BLEController.a374b1ec.png",
-  "static/media/flashlight.png": "static/media/flashlight.debd5328.png",
-  "static/media/fontawesome-webfont.eot?v=4.7.0": "static/media/fontawesome-webfont.674f50d2.eot",
-  "static/media/fontawesome-webfont.svg?v=4.7.0": "static/media/fontawesome-webfont.912ec66d.svg",
-  "static/media/fontawesome-webfont.ttf?v=4.7.0": "static/media/fontawesome-webfont.b06871f2.ttf",
-  "static/media/fontawesome-webfont.woff2?v=4.7.0": "static/media/fontawesome-webfont.af7ae505.woff2",
-  "static/media/fontawesome-webfont.woff?v=4.7.0": "static/media/fontawesome-webfont.fee66e71.woff",
-  "static/media/subTrans.png": "static/media/subTrans.bb0ea8ff.png"
+  "main.css": "static/css/main.ec1eae19.css",
+  "main.css.map": "static/css/main.ec1eae19.css.map",
+  "main.js": "static/js/main.7d464881.js",
+  "main.js.map": "static/js/main.7d464881.js.map",
+  "static\\media\\BLEController.png": "static/media/BLEController.a374b1ec.png",
+  "static\\media\\flashlight.png": "static/media/flashlight.debd5328.png",
+  "static\\media\\fontawesome-webfont.eot?v=4.7.0": "static/media/fontawesome-webfont.674f50d2.eot",
+  "static\\media\\fontawesome-webfont.svg?v=4.7.0": "static/media/fontawesome-webfont.912ec66d.svg",
+  "static\\media\\fontawesome-webfont.ttf?v=4.7.0": "static/media/fontawesome-webfont.b06871f2.ttf",
+  "static\\media\\fontawesome-webfont.woff2?v=4.7.0": "static/media/fontawesome-webfont.af7ae505.woff2",
+  "static\\media\\fontawesome-webfont.woff?v=4.7.0": "static/media/fontawesome-webfont.fee66e71.woff",
+  "static\\media\\subTrans.png": "static/media/subTrans.bb0ea8ff.png"
 }
