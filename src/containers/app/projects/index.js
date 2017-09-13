@@ -6,6 +6,7 @@ import styles from '../about/about.less'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import withScrollReveal from '../lib/react-scrollreveal'
+import { Popover } from 'antd';
 
 const Wrapper = styled.section`
 	height: 100vh;
@@ -18,13 +19,21 @@ const Wrapper = styled.section`
 	}
 `;
 
+const demovideo = (
+		<img src="https://i.imgur.com/6yeANBf.gif" alt="demoflash" width="500px" />
+	)
+const demogif = (
+		<img src="https://i.imgur.com/U0xw99E.gif" alt="demosub"/>
+	)
+
 const Project = ({animationContainerReference}) => (
 <div ref={animationContainerReference} style={{width:'70vw'}}>
 	<Wrapper>
-			<a className='sr-item--sequence' href="//github.com/dreamfliper/Flashlight/tree/master/PluginDirectories/1/merge.bundle">
-				<img src={flashlight} style={{ width: 150 }} alt='flashlight' />
-			</a>
-			<div className='sr-item-right'>
+			<Popover content={demovideo} title="Demo" >
+				<a className='sr-item--sequence' href="//github.com/dreamfliper/Flashlight/tree/master/PluginDirectories/1/merge.bundle">
+					<img src={flashlight} style={{ width: 150 }} alt='flashlight' />
+				</a>
+			</Popover>			<div className='sr-item-right'>
 				<b>
 					Merge Windows : A <a href="//flashlight.nateparrott.com">Flashlight</a> Plugin
 				</b>
@@ -48,10 +57,11 @@ const Project = ({animationContainerReference}) => (
 				<a className={`${styles.smSquareBtn} ${styles.githubaltBtn} `} href='//github.com/dreamfliper/subTrans' > </a>
 				<Link className={`${styles.smrSquareBtn} ${styles.textfileBtn} `} to={`/note/subTrans開發與Vue入門`} />
 			</div>			
-			<a className='sr-item--sequence' href="//github.com/dreamfliper/subTrans">
-				<img src={subTrans} style={{ width: 150 }} alt='subTrans' />
-			</a>
-	</Wrapper>
+	<Popover content={demogif} title="Demo" >
+		<a className='sr-item--sequence' href="//github.com/dreamfliper/subTrans">
+			<img src={subTrans} style={{ width: 150 }} alt='subTrans' />
+		</a>
+	</Popover>	</Wrapper>
 
 	<Wrapper>
 		<a className='sr-item--sequence' href="//github.com/dreamfliper/subTrans">
