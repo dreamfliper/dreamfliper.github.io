@@ -31,7 +31,7 @@ const Project = ({animationContainerReference}) => (
 				<p>
 					Merge macOS application windows into tabs <br/>
 					example: make many finder windows into single window with tabs <br/>
-					demo <br/>
+					<a href="https://www.dropbox.com/s/w7ildh25jcfag7x/merge_demo.mov?dl=0">demo</a> <br/>
 					合併 macOS 上多個視窗成為一個，變成好幾個分頁共用一個視窗 <br/>
 				</p>
 				<a className={`${styles.smSquareBtn} ${styles.githubaltBtn} `} href='//github.com/dreamfliper/Flashlight/tree/master/PluginDirectories/1/merge.bundle' > </a>
