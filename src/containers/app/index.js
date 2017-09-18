@@ -6,6 +6,7 @@ import Resume from './resume'
 import Note from './note'
 import Notecontent from './note/notecontent'
 import { Menu } from 'antd'
+import styled from 'styled-components'
 import './lib/intergram/js/widget.js'
 import './lib/night.css'
 
@@ -20,6 +21,16 @@ window.intergramCustomizations = {
 	mainColor: "#555", 
 	alwaysUseFloatingButton: false 
 }
+
+const Navigation = styled.div`
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	backgroundColor: transparent;
+	@media (max-width: 900px) {
+		display: block;
+	}
+`
 
 class App extends Component {
 
@@ -37,26 +48,27 @@ class App extends Component {
 		return (
 			<div>
 			
-				<Menu
-				onClick={this.handleClick}
-				selectedKeys={window.location.pathname==='/' ? 'about':window.location.pathname}
-				mode="horizontal"
-				style={{'display': 'flex','justifyContent':'center','backgroundColor':'transparent'}}
-				>
-					<Menu.Item key="about" >
-						<Link style={{'textDecoration': 'none'}} to="/">About</Link>
-					</Menu.Item>
-					<Menu.Item key="projects">
-						<Link style={{'textDecoration': 'none'}} to="/projects">Projects</Link>
-					</Menu.Item>
-					<Menu.Item key="resume">
-						<Link style={{'textDecoration': 'none'}} to="/resume">Resume</Link>
-					</Menu.Item>					
-					<Menu.Item key="note">
-						<Link style={{'textDecoration': 'none'}} to="/note">Notes</Link>
-					</Menu.Item>
-				</Menu>
-
+				<Navigation>
+					<Menu
+					onClick={this.handleClick}
+					selectedKeys={window.location.pathname==='/' ? 'about':window.location.pathname}
+					mode="horizontal"
+					style={{'backgroundColor':'transparent'}}
+					>
+						<Menu.Item key="about" >
+							<Link style={{'textDecoration': 'none'}} to="/">About</Link>
+						</Menu.Item>
+						<Menu.Item key="projects">
+							<Link style={{'textDecoration': 'none'}} to="/projects">Projects</Link>
+						</Menu.Item>
+						<Menu.Item key="resume">
+							<Link style={{'textDecoration': 'none'}} to="/resume">Resume</Link>
+						</Menu.Item>					
+						<Menu.Item key="note">
+							<Link style={{'textDecoration': 'none'}} to="/note">Notes</Link>
+						</Menu.Item>
+					</Menu>
+				</Navigation>
 				<main>
 					<Route exact path="/" component={About} />
 					<Route exact path="/resume" component={Resume} />

@@ -52,7 +52,7 @@ class Resume extends Component {
 	render() {
 		return (
 			<Row>
-				<Col sm={{ span:21, offset:2 }} md={{ span:18, offset:3 }} lg={{ span:16, offset:4 }}>
+				<Col sm={{ span:21, offset:2 }} md={{ span:18, offset:3 }} lg={{ span:14, offset:5 }}>
 					<Markdown  source={this.props.resumeSource} />
 				</Col>
 				<Col>
