@@ -11,7 +11,14 @@ const Title = styled.section`
 	justify-content: center;
 	flex-direction: column;
 	text-decoration: none;
-`;
+`
+
+const Table = styled.div`
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+`
 
 class Note extends Component {
 	state = {
@@ -36,7 +43,7 @@ class Note extends Component {
 
 	render() {
 		return (
-			<div>
+			<Table>
 				<ul>
 				{
 					this.state.filelist.map( (file,i) =>
@@ -44,7 +51,7 @@ class Note extends Component {
 					)
 				}
 				</ul>
-			</div>
+			</Table>
 		);
 	}
 }

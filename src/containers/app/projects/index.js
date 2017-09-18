@@ -17,7 +17,7 @@ const Wrapper = styled.section`
 	@media (max-width: 900px) {
 		display: block;
 	}
-`;
+`
 
 
 const demoflash = (
@@ -28,7 +28,7 @@ const demosub = (
 	)
 
 const Project = ({animationContainerReference}) => (
-<div ref={animationContainerReference} style={{width:'70vw'}}>
+<div ref={animationContainerReference} style={{	width:'70vw', display: 'flex', 'flex-direction':'column', 'margin':'auto'}}>
 	<Wrapper>
 		<Popover content={demoflash} title="Demo" >
 			<a className='sr-item--sequence' href="//github.com/dreamfliper/Flashlight/tree/master/PluginDirectories/1/merge.bundle">
