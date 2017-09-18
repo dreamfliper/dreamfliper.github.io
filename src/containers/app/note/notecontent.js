@@ -75,11 +75,11 @@ class Notecontent extends Component{
 	render(){
 		return (
 			<Row>
-				<Col sm={{ span:21, offset:2 }} md={{ span:17, offset:3 }} lg={{ span:18, offset:4 }}>
+				<Col xs={24} sm={{ span:21, offset:2 }} md={{ span:17, offset:3 }} lg={{ span:18, offset:4 }}>
 				<b>TOC :</b>
-				<div className='js-toc' />
-{//					<Toclist anchorlist={this.state.anchorlist} />
-					}					
+{/*				<div className='js-toc' />
+					<Toclist anchorlist={this.state.anchorlist} />
+					*/}					
 					<div className='js-toc-content' >
 						<Markdown 
 						source={this.props.resumeSource} 
