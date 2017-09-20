@@ -1,5 +1,3 @@
-import Dropbox from 'dropbox'
-
 export const INCREMENT_REQUESTED = 'counter/INCREMENT_REQUESTED'
 export const INCREMENT = 'counter/INCREMENT'
 export const DECREMENT_REQUESTED = 'counter/DECREMENT_REQUESTED'
@@ -140,23 +138,30 @@ export const updateResume = resume =>{
   }
 }
 
-export const setCurrentPage = current =>{
-  return{
-    type:SETCURRENTPAGE,
-    current
-  }
-}
+export const setCurrentPage = current =>({
+  type:SETCURRENTPAGE,
+  current
+})
 
-export const fetchDropbox = (path) => {
-  return dispatch => {
-    dispatch({type: FETCH_REQUESTED})
-    let dbx = new Dropbox({accessToken:'UVoVCEKzMf4AAAAAAAAQQpNz6Ya0Bu0cAEqT_pHWX0iCyqgkmrsSiQeP1Dho6gQT'});
-    return dbx.filesDownload(path)
-      .then( (response) => {
-        let filebuffer = new FileReader()
-        filebuffer.readAsText(response.fileBlob)
-        filebuffer.onload = evt => 
-          dispatch(updateResume(evt.currentTarget.result))
-      })
-  }
-}
+export const fetchDropbox = (path) =>({
+  type:FETCH_REQUESTED,
+  path
+})
+
+
+/******** redux-thunk ****************/
+// import Dropbox from 'dropbox'
+// 
+// export const fetchDropbox = path => {
+//   return dispatch => {
+//     dispatch({type: FETCH_REQUESTED})
+//     let dbx = new Dropbox({accessToken:'UVoVCEKzMf4AAAAAAAAQQpNz6Ya0Bu0cAEqT_pHWX0iCyqgkmrsSiQeP1Dho6gQT'});
+//     return dbx.filesDownload(path)
+//       .then( (response) => {
+//         let filebuffer = new FileReader()
+//         filebuffer.readAsText(response.fileBlob)
+//         filebuffer.onload = evt => 
+//           dispatch(updateResume(evt.currentTarget.result))
+//       })
+//   }
+// }

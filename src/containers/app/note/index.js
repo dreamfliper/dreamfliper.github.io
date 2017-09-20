@@ -2,6 +2,7 @@ import React,{ Component } from 'react'
 import Dropbox from 'dropbox'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
+import Spinner from 'react-spinkit'
 
 const Title = styled.section`
 	font-size:40px;
@@ -22,16 +23,18 @@ const Table = styled.div`
 
 class Note extends Component {
 	state = {
-		filelist:[]
+		filelist:[],
+		spin:true
 	}
 
-	componentWillMount() {
+	componentDidMount() {
 		let dbx = new Dropbox({accessToken:'UVoVCEKzMf4AAAAAAAAQQpNz6Ya0Bu0cAEqT_pHWX0iCyqgkmrsSiQeP1Dho6gQT'});
 		dbx.filesListFolder({path: '/notes'})
 			.then( (response) => {
 				for (let file of response.entries){
 					this.setState({
-						filelist:[...this.state.filelist, file.name.split('.')[0]]
+						filelist:[...this.state.filelist, file.name.split('.')[0]],
+						spin:false
 					})
 				}
 				// console.log(this.state.filelist)
@@ -44,6 +47,7 @@ class Note extends Component {
 	render() {
 		return (
 			<Table>
+				{this.state.spin && <Spinner fadeIn='none' name="line-scale" color="steelblue"/>}
 				<ul>
 				{
 					this.state.filelist.map( (file,i) =>

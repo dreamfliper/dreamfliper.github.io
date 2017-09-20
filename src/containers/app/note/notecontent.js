@@ -1,6 +1,5 @@
 import React,{ Component } from 'react';
 import Markdown from 'react-markdown'
-import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { updateResume, fetchDropbox } from '../../../modules/counter'
 import { Row, Col, /* Anchor */ } from 'antd'
@@ -87,12 +86,7 @@ const mapStateToProps = state => ({
 })
 
 
-const mapDispatchToProps = dispatch => bindActionCreators({
-  updateResume,
-  fetchDropbox,
-}, dispatch)
-
 export default connect(
 	mapStateToProps,
-	mapDispatchToProps
+	{updateResume,fetchDropbox}
 )(Notecontent)
