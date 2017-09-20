@@ -1,9 +1,8 @@
 import React,{ Component } from 'react';
-import Dropbox from 'dropbox'
 import Markdown from 'react-markdown'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import { updateResume } from '../../../modules/counter'
+import { updateResume, fetchDropbox } from '../../../modules/counter'
 import { Row, Col, /* Anchor */ } from 'antd'
 import CodeBlock from './code-render'
 // import Toclist from './toclist'
@@ -38,17 +37,7 @@ class Notecontent extends Component{
 	}
 
 	componentWillMount(){
-		let dbx = new Dropbox({accessToken:'UVoVCEKzMf4AAAAAAAAQQpNz6Ya0Bu0cAEqT_pHWX0iCyqgkmrsSiQeP1Dho6gQT'});
-		dbx.filesDownload({path: `/notes/${this.state.name}.md`})
-			.then( (response) => {
-				let filebuffer = new FileReader()
-				filebuffer.readAsText(response.fileBlob)
-				filebuffer.onload = evt => 
-					this.props.updateResume(evt.currentTarget.result)
-			})
-			.catch( (error) => {
-				console.error(error);
-			})
+		this.props.fetchDropbox({path: `/notes/${this.state.name}.md`})
 		tocbot.init({
 		  tocSelector: '.js-toc',
 		  contentSelector: '.js-toc-content',
@@ -94,10 +83,13 @@ class Notecontent extends Component{
 
 const mapStateToProps = state => ({
 	resumeSource: state.counter.resumeSource,
+	isFetch: state.counter.isFetch,
 })
+
 
 const mapDispatchToProps = dispatch => bindActionCreators({
   updateResume,
+  fetchDropbox,
 }, dispatch)
 
 export default connect(

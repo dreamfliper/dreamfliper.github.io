@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { updateResume } from '../../../modules/counter'
+import { updateResume, fetchDropbox } from '../../../modules/counter'
 import Markdown from 'react-markdown'
-import Dropbox from 'dropbox'
 import { Row, Col, Button  } from 'antd'
 
 class Resume extends Component {
@@ -14,35 +13,12 @@ class Resume extends Component {
 
 	handleClick = () =>{
 		this.setState({langSelect:+!this.state.langSelect})
-		let dbx = new Dropbox({accessToken:'UVoVCEKzMf4AAAAAAAAQQpNz6Ya0Bu0cAEqT_pHWX0iCyqgkmrsSiQeP1Dho6gQT'});
-		try{
-			(async ()=>{
-			const {fileBlob} = await dbx.filesDownload({
-				path: !!this.state.langSelect ? '/Resume_eng.md':'/Resume.md'
-			})
-			let filebuffer = new FileReader()
-			filebuffer.readAsText(fileBlob)
-			filebuffer.onload = evt => 
-				this.props.updateResume(evt.currentTarget.result)
-			})()
-		}	catch(err) {
-			console.log(err)
-		}
+		this.props.fetchDropbox({path: !!this.state.langSelect ? '/Resume_eng.md':'/Resume.md'})
 	}
 
 	componentWillMount() {
-		let dbx = new Dropbox({accessToken:'UVoVCEKzMf4AAAAAAAAQQpNz6Ya0Bu0cAEqT_pHWX0iCyqgkmrsSiQeP1Dho6gQT'});
-		try{
-			(async ()=>{
-			const {fileBlob} = await dbx.filesDownload({path: '/Resume_eng.md'})
-			let filebuffer = new FileReader()
-			filebuffer.readAsText(fileBlob)
-			filebuffer.onload = evt => 
-				this.props.updateResume(evt.currentTarget.result)
-			})()
-		}	catch(err) {
-			console.log(err)
-		}
+		console.log(!!this.state.langSelect)
+		this.props.fetchDropbox({path: '/Resume_eng.md'})
 	}
 	
 	componentWillUnmount(){
@@ -56,7 +32,7 @@ class Resume extends Component {
 					<Markdown  source={this.props.resumeSource} />
 				</Col>
 				<Col>
-					<Button type="primary" onClick={()=>this.handleClick()} >{this.state.resumeLang[this.state.langSelect]}</Button>
+					<Button loading={this.props.isFetch} type="primary" onClick={()=>this.handleClick()} >{this.state.resumeLang[this.state.langSelect]}</Button>
 				</Col>
 			</Row>
 		)
@@ -66,10 +42,12 @@ class Resume extends Component {
 
 const mapStateToProps = state => ({
 	resumeSource: state.counter.resumeSource,
+	isFetch: state.counter.isFetch,
 })
 
 const mapDispatchToProps = dispatch => bindActionCreators({
   updateResume,
+  fetchDropbox,
 }, dispatch)
 
 export default connect(

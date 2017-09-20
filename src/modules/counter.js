@@ -1,16 +1,21 @@
+import Dropbox from 'dropbox'
+
 export const INCREMENT_REQUESTED = 'counter/INCREMENT_REQUESTED'
 export const INCREMENT = 'counter/INCREMENT'
 export const DECREMENT_REQUESTED = 'counter/DECREMENT_REQUESTED'
 export const DECREMENT = 'counter/DECREMENT'
 export const UPDATERESUME = 'counter/UPDATERESUME'
 export const SETCURRENTPAGE = 'counter/SETCURRENTPAGE'
+export const FETCH_REQUESTED = 'counter/FETCH_REQUESTED'
+export const FETCH_COMPLETE = 'counter/FETCH_COMPLETE'
 
 const initialState = {
   count: 0,
   isIncrementing: false,
   isDecrementing: false,
   currentPage:'about',
-  resumeSource:'waiting for connection'
+  resumeSource:'waiting for connection',
+  isFetch: false
 }
 
 export default (state = initialState, action) => {
@@ -44,13 +49,25 @@ export default (state = initialState, action) => {
     case UPDATERESUME:
       return{
         ...state,
-        resumeSource:action.resume
+        resumeSource:action.resume,
       }    
 
     case SETCURRENTPAGE:
       return{
         ...state,
         currentPage:action.current
+      }
+
+    case FETCH_REQUESTED:
+      return{
+        ...state,
+        isFetch: true
+      }
+
+    case FETCH_COMPLETE:
+      return{
+        ...state,
+        isFetch: false
       }
 
     default:
@@ -111,9 +128,15 @@ export const decrementAsync = () => {
 }
 
 export const updateResume = resume =>{
-  return{
-    type:UPDATERESUME,
-    resume
+  return dispatch => {
+    dispatch({
+      type: UPDATERESUME,
+      resume
+    })
+
+    dispatch({
+      type: FETCH_COMPLETE
+    })
   }
 }
 
@@ -121,5 +144,19 @@ export const setCurrentPage = current =>{
   return{
     type:SETCURRENTPAGE,
     current
+  }
+}
+
+export const fetchDropbox = (path) => {
+  return dispatch => {
+    dispatch({type: FETCH_REQUESTED})
+    let dbx = new Dropbox({accessToken:'UVoVCEKzMf4AAAAAAAAQQpNz6Ya0Bu0cAEqT_pHWX0iCyqgkmrsSiQeP1Dho6gQT'});
+    return dbx.filesDownload(path)
+      .then( (response) => {
+        let filebuffer = new FileReader()
+        filebuffer.readAsText(response.fileBlob)
+        filebuffer.onload = evt => 
+          dispatch(updateResume(evt.currentTarget.result))
+      })
   }
 }
