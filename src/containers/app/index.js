@@ -13,23 +13,23 @@ import './lib/intergram/js/widget.js'
 import './lib/night.css'
 
 const About = Loadable({
-  loader: () => import("./about"),
+  loader: () => import("./about/about.js"),
   loading: Spinner
 })
 const Project = Loadable({
-  loader: () => import("./projects"),
+  loader: () => import("./projects/projects.js"),
   loading: Spinner
 })
 const Resume = Loadable({
-  loader: () => import("./resume"),
+  loader: () => import("./resume/resume.js"),
   loading: Spinner
 })
 const Note = Loadable({
-  loader: () => import("./note"),
+  loader: () => import("./note/note.js"),
   loading: Spinner
 })
 const Notecontent = Loadable({
-  loader: () => import("./note/notecontent"),
+  loader: () => import("./note/notecontent.js"),
   loading: Spinner
 })
 
