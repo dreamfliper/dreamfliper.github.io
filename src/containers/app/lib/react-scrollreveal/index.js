@@ -181,7 +181,7 @@ var ReactScrollreveal = function ReactScrollreveal() {
         key: 'refresh',
         value: function refresh() {
           this.clear(true);
-          this.init();
+          this.initialize();
         }
 
         /**

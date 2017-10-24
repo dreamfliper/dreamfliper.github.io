@@ -1,14 +1,37 @@
 import React,{ Component } from 'react';
 import { Route, Link } from 'react-router-dom'
-import About from './about'
-import Project from './projects'
-import Resume from './resume'
-import Note from './note'
-import Notecontent from './note/notecontent'
+// import About from './about'
+// import Project from './projects'
+// import Resume from './resume'
+// import Note from './note'
+// import Notecontent from './note/notecontent'
+import Spinner from 'react-spinkit'
 import { Menu } from 'antd'
 import styled from 'styled-components'
+import Loadable from 'react-loadable'
 import './lib/intergram/js/widget.js'
 import './lib/night.css'
+
+const About = Loadable({
+  loader: () => import("./about/about.js"),
+  loading: Spinner
+})
+const Project = Loadable({
+  loader: () => import("./projects/projects.js"),
+  loading: Spinner
+})
+const Resume = Loadable({
+  loader: () => import("./resume/resume.js"),
+  loading: Spinner
+})
+const Note = Loadable({
+  loader: () => import("./note/note.js"),
+  loading: Spinner
+})
+const Notecontent = Loadable({
+  loader: () => import("./note/notecontent.js"),
+  loading: Spinner
+})
 
 window.intergramId = "160411797"
 window.intergramCustomizations = {
@@ -36,6 +59,13 @@ class App extends Component {
 
 	state = {
 		current: 'about',
+	}
+
+	componentDidMount() {
+		Project.preload()
+		Resume.preload()
+		Note.preload()
+		Notecontent.preload()
 	}
 
 	handleClick = (e) => {
