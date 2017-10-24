@@ -3,20 +3,20 @@ import '../lib/font-awesome-4.7.0/css/font-awesome.min.css'
 import styles from './about.less'
 import Gravatar from 'react-gravatar'
 
-
 class About extends Component {
 	state={
 		forcegray:styles.forcegray
 	}
 
 	onMouseOverhandler = () =>{
-		this.setState({forcegray:''})
+		this.setState({forcegray:'',passdown:'mouse over'})
 	}
 	onMouseLeavehandler = () =>{
-		this.setState({forcegray:styles.forcegray})
+		this.setState({forcegray:styles.forcegray,passdown:'mouse leave'})
 	}
 
 	render(){
+
 		return (
 		  <div>
 		  	<h1 className={styles.center} >Henpai Hsu</h1>
