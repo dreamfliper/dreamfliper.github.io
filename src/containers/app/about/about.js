@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import '../lib/font-awesome-4.7.0/css/font-awesome.min.css'
 import styles from './about.less'
 import Gravatar from 'react-gravatar'
+// import ReactComponent from './ReactComponent'
 
 class About extends Component {
 	state={
@@ -38,7 +39,8 @@ class About extends Component {
 					<a className={`${styles.smGlobalBtn} ${styles.raindropBtn} ` + this.state.forcegray} href='//raindrop.io/user/129968' />
 					<a className={`${styles.smGlobalBtn} ${styles.pocketBtn} ` + this.state.forcegray} href='//getpocket.com/@dreamfliper' />
 				</div>
-				{/* eslint-enable */}
+				{/* eslint-enable 
+				<ReactComponent passdown={'passed'} />*/}
 			</div>
 		)
 	}

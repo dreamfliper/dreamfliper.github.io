@@ -81,7 +81,7 @@ class App extends Component {
 				<Navigation>
 					<Menu
 					onClick={this.handleClick}
-					selectedKeys={window.location.pathname==='/' ? 'about':window.location.pathname}
+					selectedKeys={[window.location.pathname==='/' ? 'about':window.location.pathname.split('/')[1]]}
 					mode="horizontal"
 					style={{'backgroundColor':'transparent'}}
 					>

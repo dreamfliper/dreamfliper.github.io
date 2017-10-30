@@ -2,7 +2,7 @@ import React from 'react'
 import InheritProp from './InheritProp'
 
 const ReactComponent = (props) => {
-	return <InheritProp passdown={props.passdown} />
+	return <InheritProp {...props} />
 }
 
 export default ReactComponent
