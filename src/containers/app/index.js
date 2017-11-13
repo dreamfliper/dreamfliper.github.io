@@ -1,5 +1,5 @@
 import React,{ Component } from 'react';
-import { Route, Link } from 'react-router-dom'
+import { Route, Link, Switch } from 'react-router-dom'
 // import About from './about'
 // import Project from './projects'
 // import Resume from './resume'
@@ -103,8 +103,10 @@ class App extends Component {
 					<Route exact path="/" component={About} />
 					<Route path="/resume" component={Resume} />
 					<Route path="/projects" component={Project} />
-					<Route exact path="/note" component={Note} />
-					<Route path="/note/:name" component={Notecontent} />
+					<Switch>
+						<Route path="/note/:name" component={Notecontent} />
+						<Route path="/note" component={Note} />
+					</Switch>
 				</main>
 			</div>
 		);
