@@ -101,10 +101,10 @@ class App extends Component {
 				</Navigation>
 				<main>
 					<Route exact path="/" component={About} />
-					<Route exact path="/resume" component={Resume} />
-					<Route exact path="/projects" component={Project} />
+					<Route path="/resume" component={Resume} />
+					<Route path="/projects" component={Project} />
 					<Route exact path="/note" component={Note} />
-					<Route exact path="/note/:name" component={Notecontent} />
+					<Route path="/note/:name" component={Notecontent} />
 				</main>
 			</div>
 		);
