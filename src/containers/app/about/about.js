@@ -6,7 +6,8 @@ import Gravatar from 'react-gravatar'
 
 class About extends Component {
 	state={
-		forcegray:styles.forcegray
+		forcegray:styles.forcegray,
+		value:''
 	}
 
 	onMouseOverhandler = () =>{
@@ -17,7 +18,6 @@ class About extends Component {
 	}
 
 	render(){
-
 		return (
 		  <div>
 		  	<h1 className={styles.center} >Henpai Hsu</h1>
@@ -40,7 +40,8 @@ class About extends Component {
 					<a className={`${styles.smGlobalBtn} ${styles.pocketBtn} ` + this.state.forcegray} href='//getpocket.com/@dreamfliper' />
 				</div>
 				{/* eslint-enable 
-				<ReactComponent passdown={'passed'} />*/}
+				<ReactComponent passdown={'passed'} />
+				*/}
 			</div>
 		)
 	}
