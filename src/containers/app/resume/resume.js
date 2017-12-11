@@ -12,7 +12,7 @@ class Resume extends Component {
 	}
 
 	handleClick = () =>{
-		this.setState(({langSelect})=>{langSelect:+!langSelect})
+		this.setState(({langSelect})=>({langSelect:+!langSelect}))
 		this.props.fetchDropbox({path: !!this.state.langSelect ? '/Resume_eng.md':'/Resume.md'})
 	}
 

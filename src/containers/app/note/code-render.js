@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Lowlight from 'react-lowlight'
 import js from 'highlight.js/lib/languages/javascript'
 import py from 'highlight.js/lib/languages/python'
