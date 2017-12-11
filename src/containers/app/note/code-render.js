@@ -8,16 +8,12 @@ Lowlight.registerLanguage('javascript', js)
 Lowlight.registerLanguage('python', py)
 Lowlight.registerLanguage('xml', xml)
 
-class CodeBlock extends Component{
-	render(){
-		return (
+const CodeBlock = ({language, literal, inline}) =>(
 			<Lowlight
-				language={this.props.language==='vue' ? 'xml':this.props.language}
-				value={this.props.literal}
-				inline={this.props.inline}
+				language={language==='vue' ? 'xml':language}
+				value={literal}
+				inline={inline}
 			/>
-		);
-	}
-};
+)
 
 export default CodeBlock;

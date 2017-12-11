@@ -12,7 +12,7 @@ class Resume extends Component {
 	}
 
 	handleClick = () =>{
-		this.setState({langSelect:+!this.state.langSelect})
+		this.setState(({langSelect})=>{langSelect:+!langSelect})
 		this.props.fetchDropbox({path: !!this.state.langSelect ? '/Resume_eng.md':'/Resume.md'})
 	}
 
@@ -25,6 +25,7 @@ class Resume extends Component {
 	}
 
 	render() {
+		let {resumeLang, langSelect} = this.state
 		return (
 			<Row>
 				<Col sm={{ span:21, offset:2 }} md={{ span:18, offset:3 }} lg={{ span:14, offset:5 }}>
@@ -32,7 +33,7 @@ class Resume extends Component {
 					<Markdown  source={this.props.resumeSource} />
 				</Col>
 				<Col>
-					<Button loading={this.props.isFetch} type="primary" onClick={()=>this.handleClick()} >{this.state.resumeLang[this.state.langSelect]}</Button>
+					<Button loading={this.props.isFetch} type="primary" onClick={()=>this.handleClick()} >{resumeLang[langSelect]}</Button>
 				</Col>
 			</Row>
 		)
