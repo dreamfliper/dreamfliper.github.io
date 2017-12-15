@@ -61,13 +61,6 @@ class App extends Component {
 		current: 'about',
 	}
 
-	componentDidMount() {
-		Project.preload()
-		Resume.preload()
-		Note.preload()
-		Notecontent.preload()
-	}
-
 	handleClick = (e) => {
 		this.setState({
 			current: e.key,
@@ -85,16 +78,16 @@ class App extends Component {
 					mode="horizontal"
 					style={{'backgroundColor':'transparent'}}
 					>
-						<Menu.Item key="about" >
+						<Menu.Item key="about">
 							<Link style={{'textDecoration': 'none'}} to="/">About</Link>
 						</Menu.Item>
-						<Menu.Item key="projects">
+						<Menu.Item key="projects" onMouseEnter={() => Project.preload()} >
 							<Link style={{'textDecoration': 'none'}} to="/projects">Projects</Link>
 						</Menu.Item>
-						<Menu.Item key="resume">
+						<Menu.Item key="resume" onMouseEnter={() => Resume.preload()}>
 							<Link style={{'textDecoration': 'none'}} to="/resume">Resume</Link>
 						</Menu.Item>					
-						<Menu.Item key="note">
+						<Menu.Item key="note" onMouseEnter={() => Note.preload()}>
 							<Link style={{'textDecoration': 'none'}} to="/note">Notes</Link>
 						</Menu.Item>
 					</Menu>

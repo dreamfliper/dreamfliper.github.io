@@ -10,7 +10,7 @@ class About extends Component {
 		forcegray:'forcegray'
 	}
 
-	onMouseOverhandler = () =>{
+	onMouseEnterhandler = () =>{
 		this.setState({forcegray:'',passdown:'mouse over'})
 	}
 	onMouseLeavehandler = () =>{
@@ -23,7 +23,7 @@ class About extends Component {
 		  <div>
 		  	<h1 styleName='center' >Henpai Hsu</h1>
 		    <Gravatar 
-			    onMouseOver={this.onMouseOverhandler}
+			    onMouseEnter={this.onMouseEnterhandler}
 			    onMouseLeave={this.onMouseLeavehandler}
 			    email="dreamfliper@gmail.com" size={200} 
 			    styleName='gravatar' />
