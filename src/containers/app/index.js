@@ -90,6 +90,9 @@ class App extends Component {
 						<Menu.Item key="note" onMouseEnter={() => Note.preload()}>
 							<Link style={{'textDecoration': 'none'}} to="/note">Notes</Link>
 						</Menu.Item>
+						<Menu.Item key="repository">
+							<a href="http://dreamfliper.ddns.net/" style={{'textDecoration': 'none'}} >Repository</a>
+						</Menu.Item>
 					</Menu>
 				</Navigation>
 				<main>
