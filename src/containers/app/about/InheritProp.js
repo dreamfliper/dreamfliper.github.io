@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import RenderPropsTest from './RenderPropsTest'
 
 export default class InheritProp extends Component {
 	state={
@@ -34,6 +35,9 @@ export default class InheritProp extends Component {
 						: phrase
 					))
 				}
+				<RenderPropsTest name='renderprops' >
+					{props=><p>{`${props.message} ${props.name}`}</p>}
+				</RenderPropsTest>
 			</div>
 		);
 	}
