@@ -11,6 +11,7 @@ import styled from 'styled-components'
 import Loadable from 'react-loadable'
 import './lib/intergram/js/widget.js'
 import './lib/night.css'
+import 'tocbot/dist/tocbot.css'
 
 const About = Loadable({
   loader: () => import("./about/about.js"),

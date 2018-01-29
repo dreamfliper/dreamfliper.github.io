@@ -4,11 +4,10 @@ import { connect } from 'react-redux'
 import { updateResume, fetchDropbox } from '../../../modules/counter'
 import { Row, Col, /* Anchor */ Button } from 'antd'
 import CodeBlock from './code-render'
-// import Toclist from './toclist'
 import 'highlight.js/styles/tomorrow-night.css'
 import tocbot from 'tocbot'
-
-// let anchorlist=[]
+import CSSModules from 'react-css-modules'
+import styles from '../about/about.less'
 
 function flatten (text, child) {
   return typeof child === 'string'
@@ -16,22 +15,23 @@ function flatten (text, child) {
     : React.Children.toArray(child.props.children).reduce(flatten, text)
 }
 
-
+@CSSModules(styles)
 class Notecontent extends Component{
+
 	state = {
-		name:this.props.match.params.name,
-		anchorlist:[]
+		name: this.props.match.params.name,
+		hasHeader: false
 	} 
 
-	// Handlestate = () =>{
-	// 	this.setState({anchorlist:anchorlist})
-	// }
+	componentWillReceiveProps(nextProps) {
+	  nextProps.resumeSource.startsWith('#') && this.setState({hasHeader:true})
+	}
 
 	HeadingRenderer = (props) => {
 	  let children = React.Children.toArray(props.children)
 	  let text = children.reduce(flatten, '')
 	  let slug = text.toLowerCase()
-	  // this.Handlestate()
+	  // !this.state.hasHeader && this.setState({hasHeader:true})
 	  return React.createElement('h' + props.level, {id: slug}, props.children)
 	}
 
@@ -44,16 +44,8 @@ class Notecontent extends Component{
 		})
 	}
 
-	componentDidMount(){
-		// setTimeout(
-		// 	() => this.setState({
-		// 	anchorlist:anchorlist
-		// }),2000)
-	}
-
 	componentWillUnmount(){
 		this.props.updateResume('waiting for connection')
-		// anchorlist=[]
 	}
 
 	componentDidUpdate(){
@@ -63,11 +55,14 @@ class Notecontent extends Component{
 	render(){
 		return (
 			<Row>
-				<Col sm={{ span:21, offset:2 }} md={{ span:17, offset:3 }} lg={{ span:18, offset:4 }}>
-				<b>TOC :</b>
-				<div className='js-toc' />
-{/*					<Toclist anchorlist={this.state.anchorlist} />
-					*/}					
+				{
+					this.state.hasHeader && 
+					<Col lg={{ span:2, offset:1 }} style={{position:'fixed'}} >
+						<b>TOC :</b>
+						<div styleName='js-toc' className='js-toc' />
+					</Col>
+				}
+				<Col sm={{ span:21, offset:2 }} md={{ span:17, offset:3 }} lg={{ span:12,offset:6 }}>
 					<div className='js-toc-content' >
 						<Markdown 
 						source={this.props.resumeSource} 
@@ -75,7 +70,7 @@ class Notecontent extends Component{
 						/>
 					</div>				
 				</Col>
-				<Button style={{position:'fixed',right:'19px',bottom:'80px'}} ghost type="primary" shape="circle" icon="bars" size='large'/>
+				<Button onClick={()=>this.setState({hasHeader:!this.state.hasHeader})} styleName='btn-toc' shape="circle" icon="bars" size='large' ghost/>
 			</Row>
 		)
 	}
