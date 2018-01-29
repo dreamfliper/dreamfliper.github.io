@@ -9,9 +9,15 @@
     transition: all .3s;
   }
 }
-
+.js-toc-container{
+  position: fixed;
+  z-index: 5;
+  @media (max-width: 800px) {
+    background-color: #232323;
+    max-width: 80%;
+  }
+}
 .js-toc{
-  transition: all .3s ;
   li{
     list-style-type: none;
   }

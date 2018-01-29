@@ -24,15 +24,7 @@ class Notecontent extends Component{
 	} 
 
 	componentWillReceiveProps(nextProps) {
-	  nextProps.resumeSource.startsWith('#') && this.setState({hasHeader:true})
-	}
-
-	HeadingRenderer = (props) => {
-	  let children = React.Children.toArray(props.children)
-	  let text = children.reduce(flatten, '')
-	  let slug = text.toLowerCase()
-	  // !this.state.hasHeader && this.setState({hasHeader:true})
-	  return React.createElement('h' + props.level, {id: slug}, props.children)
+	  nextProps.resumeSource.startsWith('#') && window.screen.width > 700 && this.setState({hasHeader:true})
 	}
 
 	componentWillMount(){
@@ -51,15 +43,23 @@ class Notecontent extends Component{
 	componentDidUpdate(){
 		tocbot.refresh()
 	}
+
+	HeadingRenderer = (props) => {
+	  let children = React.Children.toArray(props.children)
+	  let text = children.reduce(flatten, '')
+	  let slug = text.toLowerCase()
+	  // !this.state.hasHeader && this.setState({hasHeader:true})
+	  return React.createElement('h' + props.level, {id: slug}, props.children)
+	}
 	
 	render(){
 		return (
 			<Row>
 				{
 					this.state.hasHeader && 
-					<Col lg={{ span:2, offset:1 }} style={{position:'fixed'}} >
+					<Col styleName='js-toc-container' lg={{ span:2, offset:1 }}>
 						<b>TOC :</b>
-						<div styleName='js-toc' className='js-toc' />
+						<div onClick={() => window.screen.width < 700 && this.setState({hasHeader:!this.state.hasHeader})} styleName='js-toc' className='js-toc' />
 					</Col>
 				}
 				<Col sm={{ span:21, offset:2 }} md={{ span:17, offset:3 }} lg={{ span:12,offset:6 }}>
