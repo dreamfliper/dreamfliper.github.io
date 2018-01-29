@@ -26,15 +26,16 @@
   margin-top: 50px;
 }
 
-img:hover{
-  margin-bottom: 10px;
-  transition: all .3s ;
-}
-
-img[alt="demoflash2"], img[alt="demosub2"]{
-	display:none;
-	@media (max-width: 900px) {
-		display: block;
+img{
+	&:hover{
+	  margin-bottom: 10px;
+	  transition: all .3s ;
+	}
+	&[alt="demoflash2"], &[alt="demosub2"]{
+		display:none;
+		@media (max-width: 900px) {
+			display: block;
+		}
 	}
 }
 
@@ -73,42 +74,18 @@ img[alt="demoflash2"], img[alt="demosub2"]{
   border-radius: 10px;
 }
 
-.facebookBtn{
-  .buttonMixin("\f09a";#4060A5)
-}
-.googleplusBtn{
-  .buttonMixin("\f0d5";#e64522)
-}
-.linkedinBtn{
-  .buttonMixin("\f0e1";#0094BC)
-}
-.pinterestBtn{
-  .buttonMixin("\f0d2";#cb2027)
-}
-.githubBtn{
-  .buttonMixin("\f113";#777777)
-}
-.rssBtn{
-  .buttonMixin("\f09e";#e88845)
-}
-.telegramBtn{
-  .buttonMixin("\f2c6";#0088cc)
-}
-.steamBtn{
-  .buttonMixin("\f1b6";#1C5E81)
-}
-.raindropBtn{
-  .buttonMixin("\f0c2";#329EF3)
-}
-.pocketBtn{
-  .buttonMixin("\f265";#d5374b)
-}
-.githubaltBtn{
-  .buttonMixin("\f092";#777777)
-}
-.textfileBtn{
-  .buttonMixin("\f0f6";#777777)
-}
+.facebookBtn{   .buttonMixin("\f09a";#4060A5) }
+.googleplusBtn{ .buttonMixin("\f0d5";#e64522) }
+.linkedinBtn{   .buttonMixin("\f0e1";#0094BC) }
+.pinterestBtn{  .buttonMixin("\f0d2";#cb2027) }
+.githubBtn{     .buttonMixin("\f113";#777777) }
+.rssBtn{        .buttonMixin("\f09e";#e88845) }
+.telegramBtn{   .buttonMixin("\f2c6";#0088cc) }
+.steamBtn{      .buttonMixin("\f1b6";#1C5E81) }
+.raindropBtn{   .buttonMixin("\f0c2";#329EF3) }
+.pocketBtn{     .buttonMixin("\f265";#d5374b) }
+.githubaltBtn{  .buttonMixin("\f092";#777777) }
+.textfileBtn{   .buttonMixin("\f0f6";#777777) }
 
 .forcegray{
 	color:#aaa!important;

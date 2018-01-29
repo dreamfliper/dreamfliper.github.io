@@ -13,3 +13,9 @@ body {
 li{
 	list-style-type: disc;
 }
+
+@media (max-width: 900px) {
+	img{
+		width: 100%
+	}
+}
