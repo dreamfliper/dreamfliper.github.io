@@ -311,7 +311,12 @@ module.exports = {
                 {
                   loader: require.resolve('less-loader'),
                   options: {
-                    modifyVars: { "@link-color": "#aaa!important",'@link-hover-color' : '@primary-5!important' },
+                    modifyVars: { 
+                      '@link-color': '#aaa!important',
+                      '@link-hover-color' : '@primary-5!important' ,
+                      '@btn-height-lg': '50px',
+                      '@btn-font-size-lg': '25px'
+                    },
                   },
                 },
               ],

@@ -2,7 +2,7 @@ import React,{ Component } from 'react';
 import Markdown from 'react-markdown'
 import { connect } from 'react-redux'
 import { updateResume, fetchDropbox } from '../../../modules/counter'
-import { Row, Col, /* Anchor */ } from 'antd'
+import { Row, Col, /* Anchor */ Button } from 'antd'
 import CodeBlock from './code-render'
 // import Toclist from './toclist'
 import 'highlight.js/styles/tomorrow-night.css'
@@ -75,6 +75,7 @@ class Notecontent extends Component{
 						/>
 					</div>				
 				</Col>
+				<Button style={{position:'fixed',right:'19px',bottom:'80px'}} ghost type="primary" shape="circle" icon="bars" size='large'/>
 			</Row>
 		)
 	}

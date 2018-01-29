@@ -42,17 +42,13 @@ window.intergramCustomizations = {
 	autoNoResponse: "It seems I'm temporarily not available. "+
 									"Please leave your contact information. I'll contact you ASAP",
 	mainColor: "#555", 
-	alwaysUseFloatingButton: false 
+	alwaysUseFloatingButton: true 
 }
 
 const Navigation = styled.div`
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
-	backgroundColor: transparent;
-	@media (max-width: 900px) {
-		display: block;
-	}
 `
 
 class App extends Component {
@@ -76,7 +72,7 @@ class App extends Component {
 					onClick={this.handleClick}
 					selectedKeys={[window.location.pathname==='/' ? 'about':window.location.pathname.split('/')[1]]}
 					mode="horizontal"
-					style={{'backgroundColor':'transparent'}}
+					style={{'backgroundColor':'transparent',display:'flex', overflow:'auto'}}
 					>
 						<Menu.Item key="about">
 							<Link style={{'textDecoration': 'none'}} to="/">About</Link>

@@ -16,6 +16,6 @@ li{
 
 @media (max-width: 900px) {
 	img{
-		width: 100%
+		max-width: 100%
 	}
 }
