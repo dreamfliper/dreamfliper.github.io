@@ -2,7 +2,7 @@ import React,{ Component } from 'react';
 import Markdown from 'react-markdown'
 import { connect } from 'react-redux'
 import { updateResume, fetchDropbox } from '../../../modules/counter'
-import { Row, Col, /* Anchor */ Button } from 'antd'
+import { Row, Col, Button } from 'antd'
 import CodeBlock from './code-render'
 import 'highlight.js/styles/tomorrow-night.css'
 import tocbot from 'tocbot'
@@ -48,7 +48,6 @@ class Notecontent extends Component{
 	  let children = React.Children.toArray(props.children)
 	  let text = children.reduce(flatten, '')
 	  let slug = text.toLowerCase()
-	  // !this.state.hasHeader && this.setState({hasHeader:true})
 	  return React.createElement('h' + props.level, {id: slug}, props.children)
 	}
 	
@@ -59,7 +58,7 @@ class Notecontent extends Component{
 					this.state.hasHeader && 
 					<Col styleName='js-toc-container' lg={{ span:2, offset:1 }}>
 						<b>TOC :</b>
-						<div onClick={() => window.screen.width < 700 && this.setState({hasHeader:!this.state.hasHeader})} styleName='js-toc' className='js-toc' />
+						<div onClick={() => window.screen.width < 700 && this.setState({hasHeader:!this.state.hasHeader})} className='js-toc' />
 					</Col>
 				}
 				<Col sm={{ span:21, offset:2 }} md={{ span:17, offset:3 }} lg={{ span:12,offset:6 }}>
@@ -84,5 +83,5 @@ const mapStateToProps = state => ({
 
 export default connect(
 	mapStateToProps,
-	{updateResume,fetchDropbox}
+	{updateResume, fetchDropbox}
 )(Notecontent)
