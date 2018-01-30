@@ -50,6 +50,10 @@ const Navigation = styled.div`
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
+	overflow: auto;
+	@media (max-width: 800px){
+		justify-content: unset;
+	}
 `
 
 class App extends Component {
@@ -73,7 +77,7 @@ class App extends Component {
 					onClick={this.handleClick}
 					selectedKeys={[window.location.pathname==='/' ? 'about':window.location.pathname.split('/')[1]]}
 					mode="horizontal"
-					style={{'backgroundColor':'transparent',display:'flex', overflow:'auto'}}
+					style={{'backgroundColor':'transparent',display:'flex'}}
 					>
 						<Menu.Item key="about">
 							<Link style={{'textDecoration': 'none'}} to="/">About</Link>
