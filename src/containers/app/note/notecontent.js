@@ -24,7 +24,7 @@ class Notecontent extends Component{
 	} 
 
 	componentWillReceiveProps(nextProps) {
-	  nextProps.resumeSource.startsWith('#') && window.screen.width > 700 && this.setState({hasHeader:true})
+	  nextProps.resumeSource.startsWith('#') && window.innerWidth > 700 && this.setState({hasHeader:true})
 	}
 
 	componentWillMount(){
