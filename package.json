@@ -1,5 +1,5 @@
 {
-  "name": "create-react-app-redux",
+  "name": "dreamfliper.github.io",
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
@@ -78,7 +78,7 @@
     "test": "node scripts/test.js --env=jsdom",
     "deploy": "gh-pages -d build -r \"git@github.com:dreamfliper/dreamfliper.github.io.git\" -b master && cp public/404.html build"
   },
-  "homepage": "https://cra-redux-router-thunk.herokuapp.com",
+  "homepage": "dreamfliper.github.io",
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{js,jsx}"
