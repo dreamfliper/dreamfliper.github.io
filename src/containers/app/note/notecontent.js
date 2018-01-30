@@ -1,7 +1,7 @@
 import React,{ Component } from 'react';
 import Markdown from 'react-markdown'
 import { connect } from 'react-redux'
-import { updateResume, fetchDropbox } from '../../../modules/counter'
+import { updateResume, fetchDropbox, setArticleid } from '../../../modules/counter'
 import { Row, Col, Button } from 'antd'
 import CodeBlock from './code-render'
 import 'highlight.js/styles/tomorrow-night.css'
@@ -39,7 +39,8 @@ class Notecontent extends Component{
 	}
 
 	componentWillUnmount(){
-		this.props.updateResume('waiting for connection')
+		this.props.updateResume('')
+		this.props.setArticleid('')
 	}
 
 	componentDidUpdate(){
@@ -84,7 +85,7 @@ class Notecontent extends Component{
 				</Row>
 				<Row>
 					<Col sm={{ span:21, offset:2 }} md={{ span:17, offset:3 }} lg={{ span:12,offset:6 }}>
-						<DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
+						{this.props.articleID && <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />}
 					</Col>
 				</Row>
 			</div>
@@ -101,5 +102,5 @@ const mapStateToProps = state => ({
 
 export default connect(
 	mapStateToProps,
-	{updateResume, fetchDropbox}
+	{updateResume, fetchDropbox, setArticleid}
 )(Notecontent)

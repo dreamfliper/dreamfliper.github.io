@@ -13,8 +13,8 @@ const initialState = {
   isIncrementing: false,
   isDecrementing: false,
   currentPage:'about',
-  resumeSource:'waiting for connection',
-  articleID:'dfasdfasdf',
+  resumeSource:'',
+  articleID:'',
   isFetching: false
 }
 
@@ -149,6 +149,11 @@ export const updateResume = resume =>{
 export const setCurrentPage = current =>({
   type:SETCURRENTPAGE,
   current
+})
+
+export const setArticleid = articleID =>({
+  type:SET_ARTICLEID,
+  articleID
 })
 
 export const fetchDropbox = path =>({
