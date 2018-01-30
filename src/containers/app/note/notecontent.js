@@ -9,6 +9,7 @@ import tocbot from 'tocbot'
 import CSSModules from 'react-css-modules'
 import styles from '../about/about.less'
 import { DiscussionEmbed } from 'disqus-react';
+import Spinner from 'react-spinkit'
 
 function flatten (text, child) {
   return typeof child === 'string'
@@ -72,6 +73,7 @@ class Notecontent extends Component{
 					}
 					<Col sm={{ span:21, offset:2 }} md={{ span:17, offset:3 }} lg={{ span:12,offset:6 }}>
 						<div className='js-toc-content' >
+							{this.props.isFetching && <Spinner fadeIn='none' name="line-scale" color="steelblue" style={{position:'absolute',left:'50%',top:'50%'}}/>}
 							<Markdown 
 							source={this.props.resumeSource} 
 							renderers={{CodeBlock, Heading: this.HeadingRenderer}} 
