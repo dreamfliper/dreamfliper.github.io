@@ -29,11 +29,11 @@ class Resume extends Component {
 		return (
 			<Row>
 				<Col sm={{ span:21, offset:2 }} md={{ span:18, offset:3 }} lg={{ span:14, offset:5 }}>
-					{this.props.isFetch && <Spinner fadeIn='none' name="line-scale" color="steelblue" style={{position:'absolute',left:'50%',top:'50%'}}/>}
+					{this.props.isFetching && <Spinner fadeIn='none' name="line-scale" color="steelblue" style={{position:'absolute',left:'50%',top:'50%'}}/>}
 					<Markdown  source={this.props.resumeSource} />
 				</Col>
 				<Col>
-					<Button loading={this.props.isFetch} type="primary" onClick={()=>this.handleClick()} >{resumeLang[langSelect]}</Button>
+					<Button loading={this.props.isFetching} type="primary" onClick={()=>this.handleClick()} >{resumeLang[langSelect]}</Button>
 				</Col>
 			</Row>
 		)
@@ -43,7 +43,7 @@ class Resume extends Component {
 
 const mapStateToProps = state => ({
 	resumeSource: state.counter.resumeSource,
-	isFetch: state.counter.isFetch,
+	isFetching: state.counter.isFetching,
 })
 
 export default connect(

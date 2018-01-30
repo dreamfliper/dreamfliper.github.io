@@ -31,6 +31,7 @@ class Note extends Component {
 		let dbx = new Dropbox({accessToken:'UVoVCEKzMf4AAAAAAAAQQpNz6Ya0Bu0cAEqT_pHWX0iCyqgkmrsSiQeP1Dho6gQT'});
 		dbx.filesListFolder({path: '/notes'})
 			.then( response => {
+				console.log(response)
 				this.setState(({filelist})=>({
 					filelist:response.entries.map( file => file.name.split('.')[0]),
 					spin:false

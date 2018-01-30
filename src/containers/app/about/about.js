@@ -4,6 +4,7 @@ import styles from './about.less'
 import CSSModules from 'react-css-modules'
 import Gravatar from 'react-gravatar'
 // import ReactComponent from './ReactComponent'
+
 @CSSModules(styles,{allowMultiple:true})
 class About extends Component {
 	state={
@@ -19,6 +20,7 @@ class About extends Component {
 
 	render(){
 		let {forcegray} = this.state
+
 		return (
 		  <div>
 		  	<h1 styleName='center' >Henpai Hsu</h1>

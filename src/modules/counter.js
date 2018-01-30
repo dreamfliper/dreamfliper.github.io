@@ -4,6 +4,7 @@ export const DECREMENT_REQUESTED = 'counter/DECREMENT_REQUESTED'
 export const DECREMENT = 'counter/DECREMENT'
 export const UPDATERESUME = 'counter/UPDATERESUME'
 export const SETCURRENTPAGE = 'counter/SETCURRENTPAGE'
+export const SET_ARTICLEID = 'counter/SET_ARTICLEID'
 export const FETCH_REQUESTED = 'counter/FETCH_REQUESTED'
 export const FETCH_COMPLETE = 'counter/FETCH_COMPLETE'
 
@@ -13,7 +14,8 @@ const initialState = {
   isDecrementing: false,
   currentPage:'about',
   resumeSource:'waiting for connection',
-  isFetch: false
+  articleID:'dfasdfasdf',
+  isFetching: false
 }
 
 export default (state = initialState, action) => {
@@ -56,16 +58,22 @@ export default (state = initialState, action) => {
         currentPage:action.current
       }
 
+    case SET_ARTICLEID:
+      return{
+        ...state,
+        articleID:action.articleID
+      }
+
     case FETCH_REQUESTED:
       return{
         ...state,
-        isFetch: true
+        isFetching: true
       }
 
     case FETCH_COMPLETE:
       return{
         ...state,
-        isFetch: false
+        isFetching: false
       }
 
     default:
@@ -143,7 +151,7 @@ export const setCurrentPage = current =>({
   current
 })
 
-export const fetchDropbox = (path) =>({
+export const fetchDropbox = path =>({
   type:FETCH_REQUESTED,
   path
 })
