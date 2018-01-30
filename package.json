@@ -79,7 +79,7 @@
     "test": "node scripts/test.js --env=jsdom",
     "deploy": "gh-pages -d build -r \"git@github.com:dreamfliper/dreamfliper.github.io.git\" -b master && cp public/404.html build"
   },
-  "homepage": "dreamfliper.github.io",
+  "homepage": "https://dreamfliper.github.io",
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{js,jsx}"
