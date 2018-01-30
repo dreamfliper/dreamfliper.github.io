@@ -19,6 +19,9 @@ img{
 }
 
 @media (max-width: 900px) {
+  body{
+    font-size: 1.1rem;
+  }
 	img{
 		max-width: 100%
 	}

@@ -11,8 +11,10 @@
 }
 
 .js-toc-container{
+  transition: transform .3s ease-in-out;
   position: fixed!important;
   z-index: 5;
+  margin-left: 10px;
   li{
     list-style-type: none;
   }
@@ -20,6 +22,11 @@
     background-color: #232323;
     max-width: 80%;
   }
+}
+
+.hide{
+  transition: transform .3s ease-in-out;
+  transform: translateX(-120px);
 }
 
 

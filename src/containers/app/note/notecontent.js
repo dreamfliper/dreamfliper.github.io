@@ -17,7 +17,7 @@ function flatten (text, child) {
     : React.Children.toArray(child.props.children).reduce(flatten, text)
 }
 
-@CSSModules(styles)
+@CSSModules(styles, {allowMultiple:true})
 class Notecontent extends Component{
 
 	state = {
@@ -65,14 +65,11 @@ class Notecontent extends Component{
 		return (
 			<div>
 				<Row>
-					{
-						this.state.hasHeader && 
-						<Col styleName='js-toc-container' lg={{ span:2, offset:1 }}>
+						<Col styleName={`js-toc-container ${this.state.hasHeader ? '' : 'hide'}`} lg={{ span:2, offset:1 }}>
 							<b>TOC :</b>
 							<div onClick={() => window.innerWidth < 700 && this.setState({hasHeader:false})} className='js-toc' />
 						</Col>
-					}
-					<Col sm={{ span:21, offset:2 }} md={{ span:17, offset:3 }} lg={{ span:12,offset:6 }}>
+					<Col xs={{span:22, offset:1}} sm={{ span:21, offset:2 }} md={{ span:17, offset:3 }} lg={{ span:12,offset:6 }}>
 						<div className='js-toc-content' >
 							{this.props.isFetching && <Spinner fadeIn='none' name="line-scale" color="steelblue" style={{position:'absolute',left:'50%',top:'50%'}}/>}
 							<Markdown 
@@ -81,10 +78,10 @@ class Notecontent extends Component{
 							/>
 						</div>				
 					</Col>
-					<Button onClick={()=>this.setState(({hasHeader})=>({hasHeader:!hasHeader}))} style={{position:'fixed', right:'19px',bottom:'80px'}} shape="circle" icon="bars" size='large' ghost/>
+					<Button onClick={()=>this.setState(({hasHeader})=>({hasHeader:!hasHeader}))} style={{position:'fixed', right:'19px',bottom:'80px', zIndex:'6'}} shape="circle" icon="bars" size='large' ghost/>
 				</Row>
 				<Row>
-					<Col sm={{ span:21, offset:2 }} md={{ span:17, offset:3 }} lg={{ span:12,offset:6 }}>
+					<Col xs={{span:22, offset:1}} sm={{ span:21, offset:2 }} md={{ span:17, offset:3 }} lg={{ span:12,offset:6 }}>
 						{this.props.articleID && <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />}
 					</Col>
 				</Row>
