@@ -58,7 +58,7 @@ class Notecontent extends Component{
 					this.state.hasHeader && 
 					<Col styleName='js-toc-container' lg={{ span:2, offset:1 }}>
 						<b>TOC :</b>
-						<div onClick={() => window.screen.width < 700 && this.setState({hasHeader:!this.state.hasHeader})} className='js-toc' />
+						<div onClick={() => window.innerWidth < 700 && this.setState({hasHeader:false})} className='js-toc' />
 					</Col>
 				}
 				<Col sm={{ span:21, offset:2 }} md={{ span:17, offset:3 }} lg={{ span:12,offset:6 }}>
@@ -69,7 +69,7 @@ class Notecontent extends Component{
 						/>
 					</div>				
 				</Col>
-				<Button onClick={()=>this.setState({hasHeader:!this.state.hasHeader})} styleName='btn-toc' shape="circle" icon="bars" size='large' ghost/>
+				<Button onClick={()=>this.setState({hasHeader:!this.state.hasHeader})} style={{position:'fixed', right:'19px',bottom:'80px'}} shape="circle" icon="bars" size='large' ghost/>
 			</Row>
 		)
 	}
