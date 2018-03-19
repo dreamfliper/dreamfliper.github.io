@@ -3,24 +3,23 @@ import '../lib/font-awesome-4.7.0/css/font-awesome.min.css'
 import styles from './about.less'
 import CSSModules from 'react-css-modules'
 import Gravatar from 'react-gravatar'
-// import ReactComponent from './ReactComponent'
+import ReactComponent from './ReactComponent'
 
-@CSSModules(styles,{allowMultiple:true})
+@CSSModules(styles, { allowMultiple:true })
 class About extends Component {
 	state={
-		forcegray:'forcegray'
+		forcegray: 'forcegray'
 	}
 
 	onMouseEnterhandler = () =>{
-		this.setState({forcegray:'',passdown:'mouse over'})
+		this.setState({ forcegray:'', passdown:'mouse over' })
 	}
 	onMouseLeavehandler = () =>{
-		this.setState({forcegray:'forcegray',passdown:'mouse leave'})
+		this.setState({ forcegray:'forcegray', passdown:'mouse leave' })
 	}
 
 	render(){
-		let {forcegray} = this.state
-
+		const { forcegray } = this.state
 		return (
 		  <div>
 		  	<h1 styleName='center' >Henpai Hsu</h1>
@@ -43,8 +42,8 @@ class About extends Component {
 					<a styleName={`smGlobalBtn pocketBtn ${forcegray}`} href='//getpocket.com/@dreamfliper' />
 				</div>
 				{/* eslint-enable 
-				<ReactComponent passdown={'passed'} />
 				*/}
+				<ReactComponent passdown={'passed'} />
 			</div>
 		)
 	}

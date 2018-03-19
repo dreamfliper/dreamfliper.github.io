@@ -20,13 +20,13 @@ export default class InheritProp extends Component {
 	}
 
 	render() {
-		let reg = /[-a-zA-Z0-9@:%._~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_.~#?&//=]*)/g
-		let str = '中文www.google.com也是沒問題中文www.googleeee.com也是沒問題'
-		let matched = str.match(reg)
+		const reg = /[-a-zA-Z0-9@:%._~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_.~#?&//=]*)/g
+		const str = '中文www.google.com也是沒問題中文www.googleeee.com也是沒問題'
+		const matched = str.match(reg)
 
 		return (
 			<div>
-				{this.state.gotdata}
+				{ this.state.gotdata }
 				 <input type="text" value={this.state.value} onChange={this.handleChange} />
 				{
 					str.split(reg).map(phrase => (
