@@ -33,5 +33,5 @@ function* logger(action) {
 
 export default function* rootSaga() {
   yield takeEvery("counter/FETCH_REQUESTED", fetchDropbox);
-  yield takeEvery('*', logger)
+  // yield takeEvery('*', logger)
 }
