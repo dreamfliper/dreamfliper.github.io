@@ -1,4 +1,4 @@
-import { select, takeEvery, call, put } from 'redux-saga/effects'
+import { /*select,*/ takeEvery, call, put } from 'redux-saga/effects'
 import Dropbox from 'dropbox'
 
 
@@ -24,12 +24,12 @@ function* fetchDropbox(action) {
 	yield put({type: 'counter/FETCH_COMPLETE'})
 }
 
-function* logger(action) {
-  const state = yield select()
+// function* logger(action) {
+//   const state = yield select()
 
-  console.log('action', action)
-  console.log('state after', state)
-}
+//   console.log('action', action)
+//   console.log('state after', state)
+// }
 
 export default function* rootSaga() {
   yield takeEvery("counter/FETCH_REQUESTED", fetchDropbox);
