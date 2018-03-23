@@ -1,10 +1,5 @@
 import React,{ Component } from 'react';
 import { Route, Link, Switch } from 'react-router-dom'
-// import About from './about'
-// import Project from './projects'
-// import Resume from './resume'
-// import Note from './note'
-// import Notecontent from './note/notecontent'
 import Spinner from 'react-spinkit'
 import { Menu } from 'antd'
 import styled from 'styled-components'
@@ -40,8 +35,9 @@ window.intergramCustomizations = {
 	titleOpen: 'dreamfliper on telegram',
 	introMessage: 'Ask Me Anything :)',
 	autoResponse: 'Messages Sent',
-	autoNoResponse: "It seems I'm temporarily not available. "+
-									"Please leave your contact information. I'll contact you ASAP",
+	autoNoResponse: 
+		"It seems I'm temporarily not available. "+
+		"Please leave your contact information. I'll contact you ASAP",
 	mainColor: "#555", 
 	alwaysUseFloatingButton: true 
 }
@@ -62,9 +58,9 @@ class App extends Component {
 		current: 'about',
 	}
 
-	handleClick = (e) => {
+	handleClick = ({key}) => {
 		this.setState({
-			current: e.key,
+			current: key
 		});
 	}
 	
@@ -75,7 +71,13 @@ class App extends Component {
 				<Navigation>
 					<Menu
 					onClick={this.handleClick}
-					selectedKeys={[window.location.pathname==='/' ? 'about':window.location.pathname.split('/')[1]]}
+					selectedKeys={
+						[ 
+							window.location.pathname==='/' 
+								? 'about'
+								: window.location.pathname.split('/')[1]
+						]
+					}
 					mode="horizontal"
 					style={{'backgroundColor':'transparent',display:'flex'}}
 					>
@@ -91,9 +93,15 @@ class App extends Component {
 						<Menu.Item key="note" onMouseEnter={() => Note.preload()}>
 							<Link style={{'textDecoration': 'none'}} to="/note">Notes</Link>
 						</Menu.Item>
+					{/*
 						<Menu.Item key="repository">
-							<a href="http://dreamfliper.ddns.net/" style={{'textDecoration': 'none'}} >Repository</a>
+							<a 
+								href="http://dreamfliper.ddns.net/"
+								style={{'textDecoration': 'none'}}
+							>
+								Repository</a>
 						</Menu.Item>
+					*/}
 					</Menu>
 				</Navigation>
 				<main>

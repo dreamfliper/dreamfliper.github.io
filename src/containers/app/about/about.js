@@ -1,20 +1,20 @@
 import React, { Component } from 'react'
-import '../lib/font-awesome-4.7.0/css/font-awesome.min.css'
-import styles from './about.less'
 import CSSModules from 'react-css-modules'
 import Gravatar from 'react-gravatar'
+import '../lib/font-awesome-4.7.0/css/font-awesome.min.css'
+import styles from './about.less'
 // import ReactComponent from './ReactComponent'
 
 @CSSModules(styles, { allowMultiple:true })
 class About extends Component {
-	state={
+	state = {
 		forcegray: 'forcegray'
 	}
 
-	onMouseEnterhandler = () =>{
+	onMouseEnterhandler = () => {
 		this.setState({ forcegray:'', passdown:'mouse over' })
 	}
-	onMouseLeavehandler = () =>{
+	onMouseLeavehandler = () => {
 		this.setState({ forcegray:'forcegray', passdown:'mouse leave' })
 	}
 
@@ -27,7 +27,8 @@ class About extends Component {
 			    onMouseEnter={this.onMouseEnterhandler}
 			    onMouseLeave={this.onMouseLeavehandler}
 			    email="dreamfliper@gmail.com" size={200} 
-			    styleName='gravatar' />
+			    styleName='gravatar' 
+			  />
 		    <p id={styles.comment} >Gravatar</p>
 				{/* eslint-disable */}
 				<div id={styles.social} >

@@ -1,22 +1,22 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import RenderPropsTest from './RenderPropsTest'
 
 export default class InheritProp extends Component {
-	state={
-		gotdata:this.props.passdown,
-		value:''
+	state = {
+		gotdata: this.props.passdown,
+		value: '',
 	}
 
 	componentWillReceiveProps(nextProps) {
-		if ( nextProps!==this.props ) {
+		if (nextProps !== this.props) {
 			this.setState({
-				gotdata:nextProps.passdown
-			});
-		}	
+				gotdata: nextProps.passdown,
+			})
+		}
 	}
 
-	handleChange = (e) => {
-		this.setState({value:e.target.value.replace(/\D/g,'')});
+	handleChange = e => {
+		this.setState({ value: e.target.value.replace(/\D/g, '') })
 	}
 
 	render() {
@@ -26,19 +26,18 @@ export default class InheritProp extends Component {
 
 		return (
 			<div>
-				{ this.state.gotdata }
-				 <input type="text" value={this.state.value} onChange={this.handleChange} />
-				{
-					str.split(reg).map(phrase => (
-						phrase === '' 
-						? <a href={matched[0]}>{matched.shift()}</a>
-						: phrase
-					))
-				}
-				<RenderPropsTest name='renderprops' >
-					{props=><p>{`${props.message} ${props.name}`}</p>}
+				{this.state.gotdata}
+				<input type="text" value={this.state.value} onChange={this.handleChange} />
+				{str
+					.split(reg)
+					.map(
+						phrase =>
+							phrase === '' ? <a href={matched[0]}>{matched.shift()}</a> : phrase
+					)}
+				<RenderPropsTest name="renderprops">
+					{props => <p>{`${props.message} ${props.name}`}</p>}
 				</RenderPropsTest>
 			</div>
-		);
+		)
 	}
 }
