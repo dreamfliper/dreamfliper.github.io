@@ -5,6 +5,12 @@ import Spinner from 'react-spinkit'
 import { Row, Col, Button } from 'antd'
 import { updateResume, fetchDropbox } from '../../../modules/counter'
 
+const mapStateToProps = ({ counter: { resumeSource, isFetching } }) => ({
+	resumeSource,
+	isFetching,
+})
+
+@connect(mapStateToProps, { updateResume, fetchDropbox })
 class Resume extends Component {
 	state = {
 		langSelect: 0,
@@ -46,11 +52,7 @@ class Resume extends Component {
 					<Markdown source={this.props.resumeSource} />
 				</Col>
 				<Col>
-					<Button
-						loading={this.props.isFetching}
-						type="primary"
-						onClick={this.handleClick}
-					>
+					<Button loading={this.props.isFetching} type="primary" onClick={this.handleClick}>
 						{resumeLang[langSelect]}
 					</Button>
 				</Col>
@@ -59,7 +61,4 @@ class Resume extends Component {
 	}
 }
 
-export default connect(
-	({ counter: { resumeSource, isFetching } }) => ({ resumeSource, isFetching }),
-	{ updateResume, fetchDropbox }
-)(Resume)
+export default Resume

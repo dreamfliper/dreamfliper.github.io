@@ -19,9 +19,7 @@ const Wrapper = styled.section`
 	}
 `
 
-const demoflash = (
-	<img src="https://i.imgur.com/6yeANBf.gif" alt="demoflash" width="500px" />
-)
+const demoflash = <img src="https://i.imgur.com/6yeANBf.gif" alt="demoflash" width="500px" />
 const demosub = <img src="https://i.imgur.com/U0xw99E.gif" alt="demosub" />
 
 const Project = ({ animationContainerReference }) => (
