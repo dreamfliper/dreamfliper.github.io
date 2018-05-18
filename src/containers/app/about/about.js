@@ -11,23 +11,19 @@ class About extends Component {
 		forcegray: 'forcegray'
 	}
 
-	onMouseEnterhandler = () => {
-		this.setState({ forcegray:'', passdown:'mouse over' })
-	}
-	onMouseLeavehandler = () => {
-		this.setState({ forcegray:'forcegray', passdown:'mouse leave' })
-	}
+	onMouseEnter = () => this.setState({ forcegray:'', passdown:'mouse over' })
+	onMouseLeave = () => this.setState({ forcegray:'forcegray', passdown:'mouse leave' })
 
 	render(){
+		const { onMouseEnter, onMouseLeave } = this
 		const { forcegray } = this.state
 		return (
 		  <div>
 		  	<h1 styleName='center' >Henpai Hsu</h1>
 		    <Gravatar 
-			    onMouseEnter={this.onMouseEnterhandler}
-			    onMouseLeave={this.onMouseLeavehandler}
 			    email="dreamfliper@gmail.com" size={200} 
 			    styleName='gravatar' 
+			    {...{ onMouseEnter, onMouseLeave }}
 			  />
 		    <p id={styles.comment} >Gravatar</p>
 				{/* eslint-disable */}
@@ -43,8 +39,8 @@ class About extends Component {
 					<a styleName={`smGlobalBtn pocketBtn 		 ${forcegray}`} href='//getpocket.com/@dreamfliper' />
 				</div>
 				{/* eslint-enable 
-				*/}
 				<ReactComponent passdown={'passed'} />
+				*/}
 			</div>
 		)
 	}

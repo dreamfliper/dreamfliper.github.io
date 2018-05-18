@@ -7,7 +7,6 @@ export default class InheritProp extends Component<
 	{ passdown: string },
 	{ gotdata: string, value: string }
 > {
-
 	state = {
 		gotdata: this.props.passdown,
 		value: '',
@@ -37,8 +36,7 @@ export default class InheritProp extends Component<
 				{str
 					.split(reg)
 					.map(
-						phrase =>
-							phrase === '' ? <a href={matched[0]}>{matched.shift()}</a> : phrase
+						phrase => (phrase === '' ? <a href={matched[0]}>{matched.shift()}</a> : phrase)
 					)}
 				<RenderPropsTest name="renderprops">
 					{props => <p>{`${props.message} ${props.name}`}</p>}
