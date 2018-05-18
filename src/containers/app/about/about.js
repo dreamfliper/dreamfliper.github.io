@@ -3,7 +3,7 @@ import CSSModules from 'react-css-modules'
 import Gravatar from 'react-gravatar'
 import '../lib/font-awesome-4.7.0/css/font-awesome.min.css'
 import styles from './about.less'
-// import ReactComponent from './ReactComponent'
+import ReactComponent from './ReactComponent'
 
 @CSSModules(styles, { allowMultiple:true })
 class About extends Component {
@@ -43,8 +43,8 @@ class About extends Component {
 					<a styleName={`smGlobalBtn pocketBtn 		 ${forcegray}`} href='//getpocket.com/@dreamfliper' />
 				</div>
 				{/* eslint-enable 
-				<ReactComponent passdown={'passed'} />
 				*/}
+				<ReactComponent passdown={'passed'} />
 			</div>
 		)
 	}

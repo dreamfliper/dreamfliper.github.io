@@ -1,13 +1,20 @@
-import React, { Component } from 'react'
+//@flow
+import * as React from 'react'
+import { Component } from 'react'
 import RenderPropsTest from './RenderPropsTest'
 
-export default class InheritProp extends Component {
+export default class InheritProp extends Component<
+	{ passdown: string },
+	{ gotdata: string, value: string }
+> {
+
 	state = {
 		gotdata: this.props.passdown,
 		value: '',
 	}
 
-	componentWillReceiveProps(nextProps) {
+	// bad design, but I saw this everyday
+	componentWillReceiveProps(nextProps: any) {
 		if (nextProps !== this.props) {
 			this.setState({
 				gotdata: nextProps.passdown,
@@ -15,14 +22,13 @@ export default class InheritProp extends Component {
 		}
 	}
 
-	handleChange = e => {
-		this.setState({ value: e.target.value.replace(/\D/g, '') })
-	}
+	handleChange = ({ target: { value: newValue } }: { target: { value: string } }) =>
+		this.setState({ value: newValue.replace(/\D/g, '') })
 
 	render() {
-		const reg = /[-a-zA-Z0-9@:%._~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_.~#?&//=]*)/g
-		const str = '中文www.google.com也是沒問題中文www.googleeee.com也是沒問題'
-		const matched = str.match(reg)
+		const reg: RegExp = /[-a-zA-Z0-9@:%._~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_.~#?&//=]*)/g
+		const str: string = '中文www.google.com也是沒問題中文www.googleeee.com也是沒問題'
+		const matched: Array<string> = str.match(reg) || []
 
 		return (
 			<div>
