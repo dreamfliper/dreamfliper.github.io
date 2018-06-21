@@ -10,7 +10,9 @@
     "babel-preset-flow": "^6.23.0",
     "gh-pages": "^1.0.0",
     "less": "^2.7.2",
-    "less-loader": "^4.0.5"
+    "less-loader": "^4.0.5",
+    "redux-devtools-extension": "^2.13.2",
+    "testcafe": "^0.20.0"
   },
   "dependencies": {
     "antd": "^2.12.3",
@@ -27,6 +29,8 @@
     "disqus-react": "^1.0.4",
     "dotenv": "4.0.0",
     "dropbox": "^2.5.7",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "eslint": "3.19.0",
     "eslint-config-react-app": "^1.0.5",
     "eslint-loader": "1.7.1",
@@ -64,6 +68,7 @@
     "react-router-dom": "^4.1.1",
     "react-router-redux": "next",
     "react-spinkit": "^3.0.0",
+    "react-test-renderer": "^16.3.2",
     "redux": "^3.6.0",
     "redux-saga": "^0.15.6",
     "redux-thunk": "^2.2.0",
@@ -85,6 +90,7 @@
     "build": "node scripts/build.js",
     "flow": "flow",
     "test": "node scripts/test.js --env=jsdom",
+    "testcafe": "testcafe all tests/*.test.js --app \"yarn start\" --app-init-delay 10000 -S -s screenshots",
     "deploy": "gh-pages -d build -r \"git@github.com:dreamfliper/dreamfliper.github.io.git\" -b master && cp public/404.html build"
   },
   "homepage": "https://dreamfliper.github.io",
@@ -95,6 +101,7 @@
     "setupFiles": [
       "<rootDir>/config/polyfills.js"
     ],
+    "setupTestFrameworkScriptFile": "<rootDir>/src/setupTests.js",
     "testMatch": [
       "<rootDir>/src/**/__tests__/**/*.js?(x)",
       "<rootDir>/src/**/?(*.)(spec|test).js?(x)"

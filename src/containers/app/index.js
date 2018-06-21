@@ -1,5 +1,5 @@
 import React,{ Component } from 'react';
-import { Route, Link, Switch } from 'react-router-dom'
+import { Route, Link, Switch, withRouter } from 'react-router-dom'
 import Spinner from 'react-spinkit'
 import { Menu } from 'antd'
 import styled from 'styled-components'
@@ -65,6 +65,7 @@ class App extends Component {
 	}
 	
 	render() {
+		const { pathname } = this.props.location
 		return (
 			<div>
 			
@@ -73,9 +74,9 @@ class App extends Component {
 					onClick={this.handleClick}
 					selectedKeys={
 						[ 
-							window.location.pathname==='/' 
+							pathname === '/' 
 								? 'about'
-								: window.location.pathname.split('/')[1]
+								: pathname.split('/')[1]
 						]
 					}
 					mode="horizontal"
@@ -118,5 +119,5 @@ class App extends Component {
 	}
 }
 
-export default (App)
+export default withRouter(App)
 
