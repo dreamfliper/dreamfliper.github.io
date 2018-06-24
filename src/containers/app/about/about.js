@@ -3,7 +3,7 @@ import CSSModules from 'react-css-modules'
 import Gravatar from 'react-gravatar'
 import '../lib/font-awesome-4.7.0/css/font-awesome.min.css'
 import styles from './about.less'
-import ReactComponent from './ReactComponent'
+// import ReactComponent from './ReactComponent'
 
 @CSSModules(styles, { allowMultiple:true })
 class About extends Component {
@@ -21,8 +21,9 @@ class About extends Component {
 		  <div>
 		  	<h1 styleName='center' >Henpai Hsu</h1>
 		    <Gravatar 
-			    email="dreamfliper@gmail.com" size={200} 
+			    email="dreamfliper@gmail.com" 
 			    styleName='gravatar' 
+			    size={200} 
 			    {...{ onMouseEnter, onMouseLeave }}
 			  />
 		    <p id={styles.comment} >Gravatar</p>

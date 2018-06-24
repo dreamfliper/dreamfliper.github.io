@@ -2,6 +2,7 @@
 import * as React from 'react'
 import { Component } from 'react'
 import RenderPropsTest from './RenderPropsTest'
+import styled from 'styled-components'
 
 export default class InheritProp extends Component<
 	{ passdown: string },
@@ -32,6 +33,7 @@ export default class InheritProp extends Component<
 		return (
 			<div>
 				{this.state.gotdata}
+				<StyledProps gray='gray' />
 				<input type="text" value={this.state.value} onChange={this.handleChange} />
 				{str
 					.split(reg)
@@ -45,3 +47,9 @@ export default class InheritProp extends Component<
 		)
 	}
 }
+
+const StyledProps = styled.div`
+	width: 30px;
+	height: 20px;
+	background-color: ${({gray}) => gray};
+`
