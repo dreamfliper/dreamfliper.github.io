@@ -11,15 +11,14 @@ import CodeBlock from './code-render'
 import styles from '../about/about.less'
 import 'highlight.js/styles/tomorrow-night.css'
 
-const disqusShortname = 'dreamfliper-github-io'
-
-const mapStateToProps = ({ counter: { resumeSource, articleID, isFetching } }) => ({
-	resumeSource,
-	articleID,
-	isFetching,
-})
-
-@connect(mapStateToProps, { updateResume, fetchDropbox, setArticleid })
+@connect(
+	({ counter: { resumeSource, articleID, isFetching } }) => ({
+		resumeSource,
+		articleID,
+		isFetching,
+	}),
+	{ updateResume, fetchDropbox, setArticleid }
+)
 @CSSModules(styles, { allowMultiple: true })
 class Notecontent extends Component {
 	state = {
@@ -51,24 +50,26 @@ class Notecontent extends Component {
 		tocbot.refresh()
 	}
 
-	HeadingRenderer = props => {
-		let slug = React.Children.toArray(props.children)
-			.reduce(flatten, '')
-			.toLowerCase()
-		return React.createElement('h' + props.level, { id: slug }, props.children)
-	}
+	toggleTOCBot = () => this.setState(({ hasHeader }) => ({ hasHeader: !hasHeader }))
 
 	render() {
+		const { hasHeader } = this.state
+		const {
+			isFetching,
+			articleID,
+			resumeSource,
+			match: { params },
+		} = this.props
 		const disqusConfig = {
 			url: `https://dreamfliper.github.io${window.location.pathname}`,
-			identifier: this.props.articleID,
-			title: this.props.match.params.name,
+			identifier: articleID,
+			title: params.name,
 		}
 		return (
 			<div>
 				<Row>
 					<Col
-						styleName={`js-toc-container ${this.state.hasHeader ? '' : 'hide'}`}
+						styleName={`js-toc-container ${hasHeader ? '' : 'hide'}`}
 						lg={{ span: 2, offset: 1 }}
 					>
 						<b>TOC :</b>
@@ -84,7 +85,7 @@ class Notecontent extends Component {
 						lg={{ span: 12, offset: 6 }}
 					>
 						<div className="js-toc-content">
-							{this.props.isFetching && (
+							{isFetching && (
 								<Spinner
 									fadeIn="none"
 									name="line-scale"
@@ -92,14 +93,11 @@ class Notecontent extends Component {
 									style={{ position: 'absolute', left: '50%', top: '50%' }}
 								/>
 							)}
-							<Markdown
-								source={this.props.resumeSource}
-								renderers={{ CodeBlock, Heading: this.HeadingRenderer }}
-							/>
+							<Markdown source={resumeSource} renderers={{ CodeBlock, Heading }} />
 						</div>
 					</Col>
 					<Button
-						onClick={() => this.setState(({ hasHeader }) => ({ hasHeader: !hasHeader }))}
+						onClick={this.toggleTOCBot}
 						style={{ position: 'fixed', right: '19px', bottom: '80px', zIndex: '6' }}
 						shape="circle"
 						icon="bars"
@@ -131,3 +129,16 @@ function flatten(text, child) {
 		? text + child
 		: React.Children.toArray(child.props.children).reduce(flatten, text)
 }
+
+const disqusShortname = 'dreamfliper-github-io'
+
+const Heading = props =>
+	React.createElement(
+		'h' + props.level,
+		{
+			id: React.Children.toArray(props.children)
+				.reduce(flatten, '')
+				.toLowerCase(),
+		},
+		props.children
+	)

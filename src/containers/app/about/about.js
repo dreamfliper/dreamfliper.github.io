@@ -28,15 +28,15 @@ class About extends Component {
 		    <p id={styles.comment} >Gravatar</p>
 				{/* eslint-disable */}
 				<div id={styles.social} >
-					<a styleName={`smGlobalBtn facebookBtn 	 ${forcegray}`} href='//www.facebook.com/dreamfliper' />
-					<a styleName={`smGlobalBtn githubBtn 		 ${forcegray}`} href='//github.com/dreamfliper' />
-					<a styleName={`smGlobalBtn telegramBtn 	 ${forcegray}`} href='//t.me/dreamfliper' />
-					<a styleName={`smGlobalBtn googleplusBtn ${forcegray}`} href='//plus.google.com/+%E8%A8%B1%E4%BA%A8%E7%99%BE' />
-					<a styleName={`smGlobalBtn pinterestBtn  ${forcegray}`} href='//www.pinterest.com/dreamfliper/' />
-					<a styleName={`smGlobalBtn steamBtn 		 ${forcegray}`} href='//steamcommunity.com/id/dreamfliper' />
-					<a styleName={`smGlobalBtn linkedinBtn 	 ${forcegray}`} href='//www.linkedin.com/in/henpai-hsu-76688282/' />
-					<a styleName={`smGlobalBtn raindropBtn 	 ${forcegray}`} href='//raindrop.io/user/129968' />
-					<a styleName={`smGlobalBtn pocketBtn 		 ${forcegray}`} href='//getpocket.com/@dreamfliper' />
+					<a styleName={`${forcegray} sm-global-btn facebook-btn`} href='//www.facebook.com/dreamfliper' />
+					<a styleName={`${forcegray} sm-global-btn github-btn`} href='//github.com/dreamfliper' />
+					<a styleName={`${forcegray} sm-global-btn telegram-btn`} href='//t.me/dreamfliper' />
+					<a styleName={`${forcegray} sm-global-btn googleplus-btn`} href='//plus.google.com/+%E8%A8%B1%E4%BA%A8%E7%99%BE' />
+					<a styleName={`${forcegray} sm-global-btn pinterest-btn`} href='//www.pinterest.com/dreamfliper/' />
+					<a styleName={`${forcegray} sm-global-btn steam-btn`} href='//steamcommunity.com/id/dreamfliper' />
+					<a styleName={`${forcegray} sm-global-btn linkedin-btn`} href='//www.linkedin.com/in/henpai-hsu-76688282/' />
+					<a styleName={`${forcegray} sm-global-btn raindrop-btn`} href='//raindrop.io/user/129968' />
+					<a styleName={`${forcegray} sm-global-btn pocket-btn`} href='//getpocket.com/@dreamfliper' />
 				</div>
 				{/* eslint-enable 
 				<ReactComponent passdown={'passed'} />
