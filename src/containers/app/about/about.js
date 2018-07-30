@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import CSSModules from 'react-css-modules'
 import Gravatar from 'react-gravatar'
-import '../lib/font-awesome-4.7.0/css/font-awesome.min.css'
 import styles from './about.less'
 // import ReactComponent from './ReactComponent'
 
@@ -20,10 +19,10 @@ class About extends Component {
 		return (
 		  <div>
 		  	<h1 styleName='center' >Henpai Hsu</h1>
-		    <Gravatar 
-			    email="dreamfliper@gmail.com" 
-			    styleName='gravatar' 
-			    size={200} 
+		    <Gravatar
+			    email="dreamfliper@gmail.com"
+			    styleName='gravatar'
+			    size={200}
 			    {...{ onMouseEnter, onMouseLeave }}
 			  />
 		    <p id={styles.comment} >Gravatar</p>
@@ -39,7 +38,7 @@ class About extends Component {
 					<a styleName={`${forcegray} sm-global-btn raindrop-btn`} href='//raindrop.io/user/129968' />
 					<a styleName={`${forcegray} sm-global-btn pocket-btn`} href='//getpocket.com/@dreamfliper' />
 				</div>
-				{/* eslint-enable 
+				{/* eslint-enable
 				<ReactComponent passdown={'passed'} />
 				*/}
 			</div>

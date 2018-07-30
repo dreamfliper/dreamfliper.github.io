@@ -10,7 +10,7 @@ const Title = styled.section`
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	flex-directioNn: column;
+	flex-direction: column;
 	text-decoration: none;
 `
 
@@ -32,10 +32,10 @@ class Note extends Component {
 			accessToken: 'UVoVCEKzMf4AAAAAAAAQQpNz6Ya0Bu0cAEqT_pHWX0iCyqgkmrsSiQeP1Dho6gQT',
 		})
 		const { entries } = await dbx.filesListFolder({ path: '/notes' })
-		this.setState(({ filelist }) => ({
+		this.setState({
 			filelist: entries.map(file => file.name.split('.')[0]),
 			spin: false,
-		}))
+		})
 	}
 
 	render() {
