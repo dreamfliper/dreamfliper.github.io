@@ -1,7 +1,9 @@
 [ignore]
+.*/build/.*
+*/node_modules/styled-components/.*
 
 [include]
-
+./src
 [libs]
 
 [lints]
