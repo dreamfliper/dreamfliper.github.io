@@ -2,6 +2,17 @@ import React, { Component } from 'react'
 import CSSModules from 'react-css-modules'
 import Gravatar from 'react-gravatar'
 import styles from './about.less'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { 
+	faFacebookF, 
+	faSteamSymbol,
+	faGithub,
+	faTelegramPlane,
+	faGooglePlusG,
+	faPinterestP,
+	faLinkedinIn,
+	faGetPocket,
+} from '@fortawesome/free-brands-svg-icons'
 // import ReactComponent from './ReactComponent'
 
 @CSSModules(styles, { allowMultiple:true })
@@ -26,19 +37,19 @@ class About extends Component {
 			    {...{ onMouseEnter, onMouseLeave }}
 			  />
 		    <p id={styles.comment} >Gravatar</p>
-				{/* eslint-disable */}
+				
 				<div id={styles.social} >
-					<a styleName={`${forcegray} sm-global-btn facebook-btn`} href='//www.facebook.com/dreamfliper' />
-					<a styleName={`${forcegray} sm-global-btn github-btn`} href='//github.com/dreamfliper' />
-					<a styleName={`${forcegray} sm-global-btn telegram-btn`} href='//t.me/dreamfliper' />
-					<a styleName={`${forcegray} sm-global-btn googleplus-btn`} href='//plus.google.com/+%E8%A8%B1%E4%BA%A8%E7%99%BE' />
-					<a styleName={`${forcegray} sm-global-btn pinterest-btn`} href='//www.pinterest.com/dreamfliper/' />
-					<a styleName={`${forcegray} sm-global-btn steam-btn`} href='//steamcommunity.com/id/dreamfliper' />
-					<a styleName={`${forcegray} sm-global-btn linkedin-btn`} href='//www.linkedin.com/in/henpai-hsu-76688282/' />
-					<a styleName={`${forcegray} sm-global-btn raindrop-btn`} href='//raindrop.io/user/129968' />
-					<a styleName={`${forcegray} sm-global-btn pocket-btn`} href='//getpocket.com/@dreamfliper' />
+					<a styleName={`${forcegray} sm-global-btn facebook-btn`} href='//www.facebook.com/dreamfliper'><FontAwesomeIcon icon={faFacebookF} /></a>
+					<a styleName={`${forcegray} sm-global-btn github-btn`} href='//github.com/dreamfliper'><FontAwesomeIcon icon={faGithub} /></a>
+					<a styleName={`${forcegray} sm-global-btn telegram-btn`} href='//t.me/dreamfliper'><FontAwesomeIcon icon={faTelegramPlane} /></a>
+					<a styleName={`${forcegray} sm-global-btn googleplus-btn`} href='//plus.google.com/+%E8%A8%B1%E4%BA%A8%E7%99%BE'><FontAwesomeIcon icon={faGooglePlusG} /></a>
+					<a styleName={`${forcegray} sm-global-btn pinterest-btn`} href='//www.pinterest.com/dreamfliper/'><FontAwesomeIcon icon={faPinterestP} /></a>
+					<a styleName={`${forcegray} sm-global-btn steam-btn`} href='//steamcommunity.com/id/dreamfliper'><FontAwesomeIcon icon={faSteamSymbol} /></a>
+					<a styleName={`${forcegray} sm-global-btn linkedin-btn`} href='//www.linkedin.com/in/henpai-hsu-76688282/'><FontAwesomeIcon icon={faLinkedinIn} /></a>
+					{/*<a styleName={`${forcegray} sm-global-btn raindrop-btn`} href='//raindrop.io/user/129968'><FontAwesomeIcon icon={faSteamSymbol} /></a>*/}
+					<a styleName={`${forcegray} sm-global-btn pocket-btn`} href='//Getpocket.com/@dreamfliper'><FontAwesomeIcon icon={faGetPocket} /></a>
 				</div>
-				{/* eslint-enable
+				{/*
 				<ReactComponent passdown={'passed'} />
 				*/}
 			</div>

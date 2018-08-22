@@ -1,6 +1,3 @@
-@import "../lib/font-awesome-4.7.0/less/font-awesome.less";
-@import "../lib/font-awesome-4.7.0/less/variables.less";
-
 .gravatar {
   border-radius: 10px;
   display: block;
@@ -81,7 +78,7 @@ img {
 .sm-global-btn:extend(.btn) {
   font-size: 25px;
   font-weight: normal;
-  line-height: 2em;
+  line-height: 2.1em;
   border-radius: 25px;
 }
 
@@ -99,12 +96,8 @@ img {
   border-radius: 10px;
 }
 
-.icon-mixin(@content; @color) {
+.icon-mixin(@color) {
   color: @color!important;
-  &:before {
-    font-family: 'FontAwesome';
-    content: @content;
-  }
   &:hover {
     color: #ddd !important;
     background: @color;
@@ -113,15 +106,15 @@ img {
   }
 }
 
-.rss-btn {.icon-mixin(@fa-var-rss;#e88845);}
-.steam-btn {.icon-mixin(@fa-var-steam;#1c5e81);}
-.github-btn {.icon-mixin(@fa-var-github-alt;#777777);}
-.pocket-btn {.icon-mixin(@fa-var-get-pocket;#d5374b);}
-.facebook-btn {.icon-mixin(@fa-var-facebook;#4060a5);}
-.linkedin-btn {.icon-mixin(@fa-var-linkedin;#0094bc);}
-.telegram-btn {.icon-mixin(@fa-var-telegram;#0088cc);}
-.raindrop-btn {.icon-mixin(@fa-var-cloud;#329ef3);}
-.textfile-btn {.icon-mixin(@fa-var-file-text-o;#777777);}
-.pinterest-btn {.icon-mixin(@fa-var-pinterest;#cb2027);}
-.githubalt-btn {.icon-mixin(@fa-var-github-square;#777777);}
-.googleplus-btn {.icon-mixin(@fa-var-google-plus;#e64522);}
+.facebook-btn {.icon-mixin(#4060a5);}
+.rss-btn {.icon-mixin(#e88845);}
+.steam-btn {.icon-mixin(#1c5e81);}
+.github-btn {.icon-mixin(#777777);}
+.pocket-btn {.icon-mixin(#d5374b);}
+.linkedin-btn {.icon-mixin(#0094bc);}
+.telegram-btn {.icon-mixin(#0088cc);}
+.raindrop-btn {.icon-mixin(#329ef3);}
+.textfile-btn {.icon-mixin(#777777);}
+.pinterest-btn {.icon-mixin(#cb2027);}
+.githubalt-btn {.icon-mixin(#777777);}
+.googleplus-btn {.icon-mixin(#e64522);}

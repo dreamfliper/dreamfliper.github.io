@@ -12,9 +12,14 @@
     "less": "^2.7.2",
     "less-loader": "^4.0.5",
     "redux-devtools-extension": "^2.13.2",
-    "testcafe": "^0.20.0"
+    "testcafe": "^0.20.0",
+    "webpack-bundle-analyzer": "^2.13.1"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.0-14",
+    "@fortawesome/free-brands-svg-icons": "^5.1.0-11",
+    "@fortawesome/free-solid-svg-icons": "^5.1.0-11",
+    "@fortawesome/react-fontawesome": "^0.1.0-11",
     "antd": "^2.12.3",
     "autoprefixer": "7.1.1",
     "babel-core": "6.25.0",
