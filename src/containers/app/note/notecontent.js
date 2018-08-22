@@ -3,13 +3,11 @@ import Markdown from 'react-markdown'
 import { connect } from 'react-redux'
 import { Row, Col, Button } from 'antd'
 import tocbot from 'tocbot'
-import CSSModules from 'react-css-modules'
 import { DiscussionEmbed } from 'disqus-react'
 import Spinner from 'react-spinkit'
 import { updateResume, fetchDropbox, setArticleid } from '../../../modules/counter'
 import CodeBlock from './code-render'
-import styles from '../about/about.less'
-import 'highlight.js/styles/tomorrow-night.css'
+import '../about/about.less'
 
 @connect(
 	({ counter: { resumeSource, articleID, isFetching } }) => ({
@@ -19,7 +17,6 @@ import 'highlight.js/styles/tomorrow-night.css'
 	}),
 	{ updateResume, fetchDropbox, setArticleid }
 )
-@CSSModules(styles, { allowMultiple: true })
 class Notecontent extends Component {
 	state = {
 		name: this.props.match.params.name,

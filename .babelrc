@@ -4,6 +4,14 @@
     "flow"
   ],
   "plugins": [
+    ["react-css-modules", {
+      "exclude": "node_modules|lib",
+      "filetypes": {
+        ".less": {
+          "syntax": "postcss-less"
+        }
+      }
+    }],
     "transform-decorators-legacy",
     "react-flow-props-to-prop-types"
   ]

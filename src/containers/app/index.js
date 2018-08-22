@@ -7,6 +7,7 @@ import Loadable from 'react-loadable'
 import './lib/intergram/js/widget.js'
 import './lib/night.css'
 import './lib/tocbot.css'
+import 'highlight.js/styles/tomorrow-night.css'
 
 const About = Loadable({
   loader: () => import("./about/about.js"),
@@ -35,11 +36,11 @@ window.intergramCustomizations = {
 	titleOpen: 'dreamfliper on telegram',
 	introMessage: 'Ask Me Anything :)',
 	autoResponse: 'Messages Sent',
-	autoNoResponse: 
+	autoNoResponse:
 		"It seems I'm temporarily not available. "+
 		"Please leave your contact information. I'll contact you ASAP",
-	mainColor: "#555", 
-	alwaysUseFloatingButton: true 
+	mainColor: "#555",
+	alwaysUseFloatingButton: true
 }
 
 const Navigation = styled.div`
@@ -63,18 +64,18 @@ class App extends Component {
 			current: key
 		});
 	}
-	
+
 	render() {
 		const { pathname } = this.props.location
 		return (
 			<div>
-			
+
 				<Navigation>
 					<Menu
 					onClick={this.handleClick}
 					selectedKeys={
-						[ 
-							pathname === '/' 
+						[
+							pathname === '/'
 								? 'about'
 								: pathname.split('/')[1]
 						]
@@ -90,13 +91,13 @@ class App extends Component {
 						</Menu.Item>
 						<Menu.Item key="resume" onMouseEnter={() => Resume.preload()}>
 							<Link style={{'textDecoration': 'none'}} to="/resume">Resume</Link>
-						</Menu.Item>					
+						</Menu.Item>
 						<Menu.Item key="note" onMouseEnter={() => Note.preload()}>
 							<Link style={{'textDecoration': 'none'}} to="/note">Notes</Link>
 						</Menu.Item>
 					{/*
 						<Menu.Item key="repository">
-							<a 
+							<a
 								href="http://dreamfliper.ddns.net/"
 								style={{'textDecoration': 'none'}}
 							>
@@ -120,4 +121,3 @@ class App extends Component {
 }
 
 export default withRouter(App)
-

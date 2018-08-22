@@ -88,7 +88,7 @@ module.exports = {
     // for React Native Web.
     extensions: ['.web.js', '.js', '.json', '.web.jsx', '.jsx'],
     alias: {
-      
+
       // Support React Native Web
       // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
       'react-native': 'react-native-web',
@@ -118,7 +118,7 @@ module.exports = {
           {
             options: {
               formatter: eslintFormatter,
-              
+
             },
             loader: require.resolve('eslint-loader'),
           },
@@ -242,7 +242,7 @@ module.exports = {
                     modules: true,
                     minimize: true,
                     sourceMap: true,
-                    localIdentName: "[name]__[local]___[hash:base64:5]"
+                    localIdentName: "[path]___[name]__[local]___[hash:base64:5]"
                   },
                 },
                 {
@@ -271,7 +271,7 @@ module.exports = {
           )
         ),
         // Note: this won't work without `new ExtractTextPlugin()` in `plugins`.
-      },      
+      },
       {
         test: /\.less$/,
         include: /node_modules/,
@@ -311,7 +311,7 @@ module.exports = {
                 {
                   loader: require.resolve('less-loader'),
                   options: {
-                    modifyVars: { 
+                    modifyVars: {
                       '@link-color': '#aaa!important',
                       '@link-hover-color' : '@primary-5!important' ,
                       '@btn-height-lg': '50px',
@@ -341,7 +341,7 @@ module.exports = {
                     modules: true,
                     minimize: true,
                     sourceMap: true,
-                    localIdentName: "[name]__[local]___[hash:base64:5]"
+                    localIdentName: "[path]___[name]__[local]___[hash:base64:5]"
                   },
                 },
                 {

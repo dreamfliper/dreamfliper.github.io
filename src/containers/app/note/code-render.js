@@ -8,12 +8,8 @@ Lowlight.registerLanguage('javascript', js)
 Lowlight.registerLanguage('python', py)
 Lowlight.registerLanguage('xml', xml)
 
-const CodeBlock = ({language, literal, inline}) =>(
-			<Lowlight
-				language={language==='vue' ? 'xml':language}
-				value={literal}
-				inline={inline}
-			/>
+const CodeBlock = ({ language, literal, inline }) => (
+	<Lowlight language={language === 'vue' ? 'xml' : language} value={literal} inline={inline} />
 )
 
-export default CodeBlock;
+export default CodeBlock

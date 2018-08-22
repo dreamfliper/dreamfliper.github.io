@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
-import CSSModules from 'react-css-modules'
 import Gravatar from 'react-gravatar'
-import styles from './about.less'
+import './about.less'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { 
-	faFacebookF, 
+import {
+	faFacebookF,
 	faSteamSymbol,
 	faGithub,
 	faTelegramPlane,
@@ -15,7 +14,6 @@ import {
 } from '@fortawesome/free-brands-svg-icons'
 // import ReactComponent from './ReactComponent'
 
-@CSSModules(styles, { allowMultiple:true })
 class About extends Component {
 	state = {
 		forcegray: 'forcegray'
@@ -36,9 +34,9 @@ class About extends Component {
 			    size={200}
 			    {...{ onMouseEnter, onMouseLeave }}
 			  />
-		    <p id={styles.comment} >Gravatar</p>
-				
-				<div id={styles.social} >
+		    <p styleName='comment' >Gravatar</p>
+
+				<div styleName='social' >
 					<a styleName={`${forcegray} sm-global-btn facebook-btn`} href='//www.facebook.com/dreamfliper'><FontAwesomeIcon icon={faFacebookF} /></a>
 					<a styleName={`${forcegray} sm-global-btn github-btn`} href='//github.com/dreamfliper'><FontAwesomeIcon icon={faGithub} /></a>
 					<a styleName={`${forcegray} sm-global-btn telegram-btn`} href='//t.me/dreamfliper'><FontAwesomeIcon icon={faTelegramPlane} /></a>

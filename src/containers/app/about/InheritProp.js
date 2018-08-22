@@ -4,9 +4,9 @@ import { Component } from 'react'
 import RenderPropsTest from './RenderPropsTest'
 import styled from 'styled-components'
 
-type Props = { passdown: string }
+type Props = { gotdata?: string, passdown: string }
 
-type State = { gotdata: string, value: string }
+type State = { gotdata?: string, value: string }
 
 type RenderProps = { message: string, name: string }
 
@@ -16,7 +16,7 @@ export default class InheritProp extends Component<Props, State> {
 		value: '',
 	}
 
-	// bad design, but I saw this everyday
+	// BAD design, but I saw this everyday
 	// componentWillReceiveProps(nextProps: Props) {
 	// 	if (nextProps !== this.props) {
 	// 		this.setState({
@@ -34,12 +34,14 @@ export default class InheritProp extends Component<Props, State> {
 
 		return (
 			<div>
-				{this./*state*/props.gotdata}
+				{this./*state*/ props.gotdata}
 				<StyledProps gray="gray" />
 				<input type="text" value={this.state.value} onChange={this.handleChange} />
 				{str
 					.split(reg)
-					.map(phrase => (phrase === '' ? <a href={matched[0]}>{matched.shift()}</a> : phrase))}
+					.map(
+						phrase => (phrase === '' ? <a href={matched[0]}>{matched.shift()}</a> : phrase)
+					)}
 				<RenderPropsTest name="renderprops">
 					{(props: RenderProps) => <p>{`${props.message} ${props.name}`}</p>}
 				</RenderPropsTest>

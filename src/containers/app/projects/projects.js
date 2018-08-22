@@ -1,16 +1,15 @@
 import React from 'react'
-import flashlight from './flashlight.png'
-import subTrans from './subTrans.png'
-import BLEcontroller from './BLEController.png'
-import styles from '../about/about.less'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-import withScrollReveal from '../lib/react-scrollreveal'
 import { Popover } from 'antd'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { faFileAlt } from '@fortawesome/free-solid-svg-icons'
-import CSSModules from 'react-css-modules'
+import withScrollReveal from '../lib/react-scrollreveal'
+import flashlight from '../lib/flashlight.png'
+import subTrans from '../lib/subTrans.png'
+import BLEcontroller from '../lib/BLEController.png'
+import '../about/about.less'
 
 const Project = ({ animationContainerReference }) => (
 	<div
@@ -128,9 +127,10 @@ export default withScrollReveal([
 			useDelay: 'once',
 		},
 	},
-])(CSSModules(Project, styles, { allowMultiple: true }))
+])(Project)
 
 const demoflash = <img src="https://i.imgur.com/6yeANBf.gif" alt="demoflash" width="500px" />
+
 const demosub = <img src="https://i.imgur.com/U0xw99E.gif" alt="demosub" />
 
 const Wrapper = styled.section`
