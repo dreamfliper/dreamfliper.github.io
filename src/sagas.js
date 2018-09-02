@@ -12,7 +12,7 @@ function readText(fileBlob) {
 
 function dropboxDown(path) {
   let dbx = new Dropbox({
-    accessToken: 'UVoVCEKzMf4AAAAAAAAQQpNz6Ya0Bu0cAEqT_pHWX0iCyqgkmrsSiQeP1Dho6gQT',
+    accessToken: process.env.REACT_APP_DROPBOX_APIKEY,
   })
   return dbx.filesDownload(path)
 }

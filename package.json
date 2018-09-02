@@ -98,7 +98,7 @@
     "flow": "flow",
     "test": "node scripts/test.js --env=jsdom",
     "testcafe": "testcafe all tests/*.test.js --app \"yarn start\" --app-init-delay 10000 -S -s screenshots",
-    "deploy": "gh-pages -d build -r \"git@github.com:dreamfliper/dreamfliper.github.io.git\" -b master && cp public/404.html build"
+    "deploy": "cp public/404.html build && gh-pages -d build -b master"
   },
   "homepage": "https://dreamfliper.github.io",
   "jest": {

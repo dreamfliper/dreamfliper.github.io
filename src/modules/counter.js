@@ -50,7 +50,7 @@ export default (state = initialState, action) => {
       return{
         ...state,
         resumeSource:action.resume,
-      }    
+      }
 
     case SETCURRENTPAGE:
       return{
@@ -164,16 +164,16 @@ export const fetchDropbox = path =>({
 
 /******** redux-thunk ****************/
 // import Dropbox from 'dropbox'
-// 
+//
 // export const fetchDropbox = path => {
 //   return dispatch => {
 //     dispatch({type: FETCH_REQUESTED})
-//     let dbx = new Dropbox({accessToken:'UVoVCEKzMf4AAAAAAAAQQpNz6Ya0Bu0cAEqT_pHWX0iCyqgkmrsSiQeP1Dho6gQT'});
+//     let dbx = new Dropbox({accessToken: process.env.dropbox_apikey});
 //     return dbx.filesDownload(path)
 //       .then( (response) => {
 //         let filebuffer = new FileReader()
 //         filebuffer.readAsText(response.fileBlob)
-//         filebuffer.onload = evt => 
+//         filebuffer.onload = evt =>
 //           dispatch(updateResume(evt.currentTarget.result))
 //       })
 //   }

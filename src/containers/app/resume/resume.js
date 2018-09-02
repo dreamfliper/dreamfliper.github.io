@@ -24,7 +24,7 @@ class Resume extends Component {
 		})
 	}
 
-	componentWillMount() {
+	componentDidMount() {
 		this.props.fetchDropbox({ path: '/Resume_eng.md' })
 	}
 

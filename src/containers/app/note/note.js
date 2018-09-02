@@ -29,7 +29,7 @@ class Note extends Component {
 
 	async componentDidMount() {
 		const dbx = new Dropbox({
-			accessToken: 'UVoVCEKzMf4AAAAAAAAQQpNz6Ya0Bu0cAEqT_pHWX0iCyqgkmrsSiQeP1Dho6gQT',
+			accessToken: process.env.REACT_APP_DROPBOX_APIKEY,
 		})
 		const { entries } = await dbx.filesListFolder({ path: '/notes' })
 		this.setState({
