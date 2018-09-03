@@ -3,7 +3,7 @@ import Dropbox from 'dropbox'
 
 function readText(fileBlob) {
   return new Promise(function(resolve, reject) {
-    let filebuffer = new FileReader()
+    const filebuffer = new FileReader()
     filebuffer.readAsText(fileBlob)
     filebuffer.onload = evt => resolve(evt.currentTarget.result)
     filebuffer.onerror = reject
@@ -11,7 +11,7 @@ function readText(fileBlob) {
 }
 
 function dropboxDown(path) {
-  let dbx = new Dropbox({
+  const dbx = new Dropbox({
     accessToken: process.env.REACT_APP_DROPBOX_APIKEY,
   })
   return dbx.filesDownload(path)
