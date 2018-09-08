@@ -5,8 +5,9 @@ before_script:
   - "yarn test && yarn testcafe"
 script:
   - "yarn build"
-# after_success:
-  # - "yarn testcafeall"
+after_success:
+  - "serve -s build"
+  - "yarn testcafe:built"
 deploy:
   provider: pages
   skip-cleanup: true
