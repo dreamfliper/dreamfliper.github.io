@@ -256,6 +256,13 @@ ol {
     /* 30px */
 }
 
+@media (max-width: 400px) {
+    ul,
+    ol {
+        padding: 0 0 0 1.3rem;
+    }
+}
+
 ul {
     list-style: square;
 }
@@ -348,7 +355,7 @@ hr {
 }
 
 h1 {
-    margin-top: 2em;
+    margin-top: 1em;
 }
 
 a {
@@ -425,7 +432,7 @@ td {
 }
 
 /** markdown source **/
-.cm-s-typora-default .cm-header, 
+.cm-s-typora-default .cm-header,
 .cm-s-typora-default .cm-property
 {
     color: #cebcca;
@@ -819,8 +826,8 @@ footer {
     border: 1px grey solid;
 }
 
-.megamenu-menu-panel .btn:hover, 
-.megamenu-menu-panel .btn:focus, 
+.megamenu-menu-panel .btn:hover,
+.megamenu-menu-panel .btn:focus,
 .megamenu-menu-panel .btn.focus {
     color: white;
 }
@@ -840,7 +847,7 @@ footer {
     color: white;
 }
 
-.modal-footer .btn-default, 
+.modal-footer .btn-default,
 .modal-footer .btn-primary,
 .modal-footer .btn-default:not(:hover) {
     border: 1px solid;

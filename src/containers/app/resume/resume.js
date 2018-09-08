@@ -4,6 +4,7 @@ import Markdown from 'react-markdown'
 import Spinner from 'react-spinkit'
 import { Row, Col, Button } from 'antd'
 import { updateResume, fetchDropbox } from '../../../modules/counter'
+import '../about/about.less'
 
 const mapStateToProps = ({ counter: { resumeSource, isFetching } }) => ({
 	resumeSource,
@@ -37,7 +38,8 @@ class Resume extends Component {
 		return (
 			<Row>
 				<Col
-					sm={{ span: 21, offset: 2 }}
+					xs={{ span: 21, offset: 1 }}
+					sm={{ span: 20, offset: 2 }}
 					md={{ span: 18, offset: 3 }}
 					lg={{ span: 14, offset: 5 }}
 				>
@@ -50,9 +52,7 @@ class Resume extends Component {
 						/>
 					)}
 					<Markdown source={this.props.resumeSource} />
-				</Col>
-				<Col>
-					<Button loading={this.props.isFetching} type="primary" onClick={this.handleClick}>
+					<Button styleName="lang-button" loading={this.props.isFetching} type="primary" onClick={this.handleClick}>
 						{resumeLang[langSelect]}
 					</Button>
 				</Col>

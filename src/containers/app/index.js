@@ -48,9 +48,6 @@ const Navigation = styled.div`
 	justify-content: center;
 	flex-wrap: wrap;
 	overflow: auto;
-	@media (max-width: 800px){
-		justify-content: unset;
-	}
 `
 
 class App extends Component {
