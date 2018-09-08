@@ -98,7 +98,7 @@
     "build": "node scripts/build.js",
     "flow": "flow",
     "test": "node scripts/test.js --env=jsdom",
-    "testcafe": "testcafe puppeteer tests/*.testcafe.js --app \"yarn start\" --app-init-delay 10000 -S -s screenshots",
+    "testcafe": "testcafe puppeteer:no_sandbox tests/*.testcafe.js --app \"yarn start\" --app-init-delay 10000 -S -s screenshots",
     "testcafeall": "testcafe all tests/*.testcafe.js --app \"yarn start\" --app-init-delay 10000 -S -s screenshots",
     "deploy": "cp public/404.html build && gh-pages -d build -b master"
   },
