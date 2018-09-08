@@ -34,7 +34,7 @@ window.intergramId = "160411797"
 window.intergramCustomizations = {
 	titleClosed: 'Online Chat',
 	titleOpen: 'dreamfliper on telegram',
-	introMessage: 'Ask Me Anything :)',
+	introMessage: 'Ask me anything :)',
 	autoResponse: 'Messages Sent',
 	autoNoResponse:
 		"It seems I'm temporarily not available. "+

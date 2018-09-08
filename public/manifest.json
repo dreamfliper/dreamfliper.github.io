@@ -1,0 +1,21 @@
+{
+    "dir": "ltr",
+    "lang": "en",
+    "name": "Dreamfliper's site",
+    "scope": "/",
+    "display": "browser",
+    "start_url": "dreamfliper.github.io",
+    "short_name": "Dreamfliper's s",
+    "theme_color": "transparent",
+    "description": "",
+    "orientation": "any",
+    "background_color": "transparent",
+    "related_applications": [],
+    "prefer_related_applications": false,
+    "icons": [
+        {
+            "src": "favicon.ico",
+            "sizes": "16x16 24x24 32x32 64x64"
+        }
+    ]
+}
