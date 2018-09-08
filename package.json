@@ -8,6 +8,7 @@
     "babel-plugin-react-flow-props-to-prop-types": "^0.15.0",
     "babel-plugin-transform-decorators-legacy": "^1.3.4",
     "babel-preset-flow": "^6.23.0",
+    "cross-env": "^5.2.0",
     "gh-pages": "^1.0.0",
     "less": "^2.7.2",
     "less-loader": "^4.0.5",
@@ -99,7 +100,7 @@
     "flow": "flow",
     "test": "node scripts/test.js --env=jsdom",
     "testcafe": "testcafe puppeteer:no_sandbox tests/*.testcafe.js --app \"yarn start\" --app-init-delay 10000 -S -s screenshots",
-    "testcafe:built": "testcafe puppeteer:no_sandbox tests/*.testcafe.js --app \"yarn start\" --app-init-delay 10000 -S -s screenshots",
+    "testcafe:built": "cross-env NODE_ENV=production testcafe puppeteer:no_sandbox tests/*.testcafe.js  -S -s screenshots",
     "testcafe:all": "testcafe all tests/*.testcafe.js --app \"yarn start\" --app-init-delay 10000 -S -s screenshots",
     "deploy": "cp public/404.html build && gh-pages -d build -b master"
   },

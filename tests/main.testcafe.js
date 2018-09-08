@@ -1,7 +1,7 @@
 import { Selector } from 'testcafe';
 
 fixture `Local server test`
-    .page `http://localhost:3000/`;
+    .page `http://localhost:${process.env.NODE_ENV === 'production' ? 5000 : 3000}/`;
 
 test('all integration test', async t => {
     await t
