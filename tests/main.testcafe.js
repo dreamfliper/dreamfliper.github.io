@@ -10,7 +10,7 @@ test('all integration test', async t => {
         .click(Selector('a').withText('Resume'))
         .expect(Selector('H1').withText('Henpai Hsu').exists).ok()
         .click(Selector('button').withText('Chinese'))
-        // .click(Selector('button').withText('English'))   will fail test on ci,
+        .click(Selector('button').withText('English'))
         .click(Selector('a').withText('Notes'))
         .expect(Selector('ul').childNodeCount).gt(0, 'Dropbox return non-zero list')
         .click(Selector('a').withText('HomePage'))
