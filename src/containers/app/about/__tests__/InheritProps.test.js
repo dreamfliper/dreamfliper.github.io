@@ -4,6 +4,7 @@ import InheritProps from '../InheritProp'
 import RenderPropsTest from '../RenderPropsTest'
 
 describe('InheritProps', () => {
+
 	it('input can only catch number', () => {
 		const wrapper = shallow(<InheritProps />)
 		const input = wrapper.find('input')
@@ -14,7 +15,7 @@ describe('InheritProps', () => {
 	})
 
 	it('render RenderPropsTest', () => {
-		const wrapper = mount(<InheritProps />)
+		const wrapper = mount(<div><InheritProps /></div>)
 		expect(wrapper.children().containsMatchingElement(<p>Yes it's me renderprops</p>)).toBeTruthy()
 	})
 

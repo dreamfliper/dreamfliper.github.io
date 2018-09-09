@@ -12,7 +12,3 @@ global.matchMedia =
 			removeListener: function() {},
 		}
 	}
-
-global.requestAnimationFrame = (cb) => {
-  setTimeout(cb, 0)
-}
