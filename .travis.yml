@@ -16,7 +16,7 @@ deploy:
   local-dir: build
   target-branch: master
   on:
-    branch:
+    branch: source
 notifications:
   webhooks:
     urls: https://fathomless-fjord-24024.herokuapp.com/notify
