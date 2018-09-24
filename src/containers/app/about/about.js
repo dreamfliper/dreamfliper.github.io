@@ -1,6 +1,5 @@
 import React, { PureComponent } from 'react'
 import Gravatar from 'react-gravatar'
-import './about.less'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
 	faFacebookF,
@@ -12,7 +11,11 @@ import {
 	faLinkedinIn,
 	faGetPocket,
 } from '@fortawesome/free-brands-svg-icons'
+import StaticWith from '../utils/StaticWith'
+import './about.less'
 // import ReactComponent from './ReactComponent'
+
+const StaticGravatar = StaticWith(Gravatar)
 
 class About extends PureComponent  {
 	state = {
@@ -28,12 +31,13 @@ class About extends PureComponent  {
 		return (
 		  <div>
 		  	<h1 styleName='center' >Henpai Hsu</h1>
-		    <Gravatar
-			    email="dreamfliper@gmail.com"
-			    styleName='gravatar'
-			    size={200}
-			    {...{ onMouseEnter, onMouseLeave }}
-			  />
+		    <div styleName='force-center' {...{ onMouseEnter, onMouseLeave }}>
+					<StaticGravatar
+						email="dreamfliper@gmail.com"
+						styleName='gravatar'
+						size={200}
+					/>
+				</div>
 		    <p styleName='comment' >Gravatar</p>
 
 				<div styleName='social' >

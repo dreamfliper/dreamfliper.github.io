@@ -17,7 +17,7 @@ const Project = ({ animationContainerReference }) => (
 		style={{
 			width: '70vw',
 			display: 'flex',
-			'flex-direction': 'column',
+			flexDirection: 'column',
 			margin: 'auto',
 		}}>
 		<Wrapper>

@@ -4,15 +4,12 @@ import Spinner from 'react-spinkit'
 import { Menu } from 'antd'
 import styled from 'styled-components'
 import Loadable from 'react-loadable'
+import About from './about/about.js';
 import './lib/intergram/js/widget.js'
 import './lib/night.css'
 import './lib/tocbot.css'
 import 'highlight.js/styles/tomorrow-night.css'
 
-const About = Loadable({
-  loader: () => import("./about/about.js"),
-  loading: Spinner
-})
 const Project = Loadable({
   loader: () => import("./projects/projects.js"),
   loading: Spinner
@@ -69,28 +66,25 @@ class App extends PureComponent  {
 
 				<Navigation>
 					<Menu
-					onClick={this.handleClick}
-					selectedKeys={
-						[
+						onClick={this.handleClick}
+						selectedKeys={[
 							pathname === '/'
 								? 'about'
 								: pathname.split('/')[1]
-						]
-					}
-					mode="horizontal"
-					style={{'backgroundColor':'transparent',display:'flex'}}
-					>
+						]}
+						mode="horizontal"
+						style={{ backgroundColor: 'transparent', display: 'flex'}}>
 						<Menu.Item key="about">
-							<Link style={{'textDecoration': 'none'}} to="/">About</Link>
+							<Link style={{textDecoration: 'none'}} to="/">About</Link>
 						</Menu.Item>
 						<Menu.Item key="projects" onMouseEnter={() => Project.preload()} >
-							<Link style={{'textDecoration': 'none'}} to="/projects">Projects</Link>
+							<Link style={{textDecoration: 'none'}} to="/projects">Projects</Link>
 						</Menu.Item>
 						<Menu.Item key="resume" onMouseEnter={() => Resume.preload()}>
-							<Link style={{'textDecoration': 'none'}} to="/resume">Resume</Link>
+							<Link style={{textDecoration: 'none'}} to="/resume">Resume</Link>
 						</Menu.Item>
 						<Menu.Item key="note" onMouseEnter={() => Note.preload()}>
-							<Link style={{'textDecoration': 'none'}} to="/note">Notes</Link>
+							<Link style={{textDecoration: 'none'}} to="/note">Notes</Link>
 						</Menu.Item>
 					{/*
 						<Menu.Item key="repository">

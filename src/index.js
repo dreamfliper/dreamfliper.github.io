@@ -8,6 +8,11 @@ import App from './containers/app'
 // import 'sanitize.css/sanitize.css'
 import './index.css'
 
+if (process.env.NODE_ENV !== 'production') {
+  const {whyDidYouUpdate} = require('why-did-you-update')
+  whyDidYouUpdate(React)
+}
+
 const target = document.querySelector('#root')
 
 render(
