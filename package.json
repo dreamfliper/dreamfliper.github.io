@@ -99,7 +99,6 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "flow": "flow",
-    "analyze": "node bundleAnalyzer.js",
     "test": "node scripts/test.js --env=jsdom",
     "testcafe": "testcafe puppeteer:no_sandbox tests/*.testcafe.js --app \"yarn start\" --app-init-delay 10000 -S -s screenshots",
     "testcafe:built": "cross-env NODE_ENV=production testcafe puppeteer:no_sandbox tests/*.testcafe.js  -S -s screenshots",
