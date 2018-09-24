@@ -1,6 +1,6 @@
 //@flow
 import * as React from 'react'
-import { Component } from 'react'
+import { PureComponent } from 'react'
 import RenderPropsTest from './RenderPropsTest'
 import styled from 'styled-components'
 
@@ -10,7 +10,7 @@ type State = { gotdata?: string, value: string }
 
 type RenderProps = { message: string, name: string }
 
-export default class InheritProp extends Component<Props, State> {
+export default class InheritProp extends PureComponent <Props, State> {
 	state = {
 		// gotdata: this.props.passdown,
 		value: '',

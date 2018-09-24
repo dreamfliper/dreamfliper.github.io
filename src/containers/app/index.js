@@ -1,4 +1,4 @@
-import React,{ Component } from 'react';
+import React,{ PureComponent } from 'react';
 import { Route, Link, Switch, withRouter } from 'react-router-dom'
 import Spinner from 'react-spinkit'
 import { Menu } from 'antd'
@@ -50,7 +50,7 @@ const Navigation = styled.div`
 	overflow: auto;
 `
 
-class App extends Component {
+class App extends PureComponent  {
 
 	state = {
 		current: 'about',

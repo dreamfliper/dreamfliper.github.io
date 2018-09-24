@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import Dropbox from 'dropbox'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
@@ -21,7 +21,7 @@ const Table = styled.div`
 	flex-direction: column;
 `
 
-class Note extends Component {
+class Note extends PureComponent  {
 	state = {
 		filelist: [],
 		spin: true,

@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import Markdown from 'react-markdown'
 import Spinner from 'react-spinkit'
@@ -12,7 +12,7 @@ const mapStateToProps = ({ counter: { resumeSource, isFetching } }) => ({
 })
 
 @connect(mapStateToProps, { updateResume, fetchDropbox })
-class Resume extends Component {
+class Resume extends PureComponent  {
 	state = {
 		langSelect: 0,
 		resumeLang: ['Chinese', 'English'],

@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import Markdown from 'react-markdown'
 import { connect } from 'react-redux'
 import { Row, Col, Button } from 'antd'
@@ -17,7 +17,7 @@ import '../about/about.less'
 	}),
 	{ updateResume, fetchDropbox, setArticleid }
 )
-class Notecontent extends Component {
+class Notecontent extends PureComponent  {
 	state = {
 		name: this.props.match.params.name,
 		hasHeader: false,

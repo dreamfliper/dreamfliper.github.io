@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import Gravatar from 'react-gravatar'
 import './about.less'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -14,7 +14,7 @@ import {
 } from '@fortawesome/free-brands-svg-icons'
 // import ReactComponent from './ReactComponent'
 
-class About extends Component {
+class About extends PureComponent  {
 	state = {
 		forcegray: 'forcegray'
 	}
