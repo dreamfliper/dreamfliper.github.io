@@ -11,11 +11,11 @@ import {
 	faLinkedinIn,
 	faGetPocket,
 } from '@fortawesome/free-brands-svg-icons'
-import StaticWith from '../utils/StaticWith'
+import Purify from '../utils/Purify'
 import './about.less'
 // import ReactComponent from './ReactComponent'
 
-const StaticGravatar = StaticWith(Gravatar)
+const PurifiedGravatar = Purify(Gravatar)
 
 class About extends PureComponent  {
 	state = {
@@ -32,7 +32,7 @@ class About extends PureComponent  {
 		  <div>
 		  	<h1 styleName='center' >Henpai Hsu</h1>
 		    <div styleName='force-center' {...{ onMouseEnter, onMouseLeave }}>
-					<StaticGravatar
+					<PurifiedGravatar
 						email="dreamfliper@gmail.com"
 						styleName='gravatar'
 						size={200}
