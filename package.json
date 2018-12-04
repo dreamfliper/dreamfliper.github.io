@@ -103,7 +103,7 @@
     "testcafe": "testcafe puppeteer:no_sandbox tests/*.testcafe.js --app \"yarn start\" --app-init-delay 10000 -S -s screenshots",
     "testcafe:built": "cross-env NODE_ENV=production testcafe puppeteer:no_sandbox tests/*.testcafe.js  -S -s screenshots",
     "testcafe:all": "testcafe all tests/*.testcafe.js --app \"yarn start\" --app-init-delay 10000 -S -s screenshots",
-    "deploy": "cp public/404.html build && gh-pages -d build -b master"
+    "deploy": "cp public/404.html build && cp public/cname build && gh-pages -d build -b master"
   },
   "homepage": "https://dreamfliper.github.io",
   "jest": {
