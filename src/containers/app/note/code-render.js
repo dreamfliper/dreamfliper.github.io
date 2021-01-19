@@ -1,3 +1,4 @@
+//@flow
 import React from 'react'
 import Lowlight from 'react-lowlight'
 import js from 'highlight.js/lib/languages/javascript'
@@ -8,8 +9,14 @@ Lowlight.registerLanguage('javascript', js)
 Lowlight.registerLanguage('python', py)
 Lowlight.registerLanguage('xml', xml)
 
-const CodeBlock = ({ language, literal, inline }) => (
-	<Lowlight language={language === 'vue' ? 'xml' : language} value={literal} inline={inline} />
+type CodeBlockType = {
+  language: string,
+  literal: string,
+  inline: boolean,
+}
+
+const CodeBlock = ({ language, literal, inline }: CodeBlockType) => (
+  <Lowlight language={language === 'vue' ? 'xml' : language} value={literal} inline={inline} />
 )
 
 export default CodeBlock
