@@ -33,7 +33,7 @@ class Note extends PureComponent  {
 		})
 		const { entries } = await dbx.filesListFolder({ path: '/notes' })
 		this.setState({
-			filelist: entries.map(file => file.name.split('.')[0]),
+			filelist: entries.map(file => file.name.split('.')[0]).reverse(),
 			spin: false,
 		})
 	}

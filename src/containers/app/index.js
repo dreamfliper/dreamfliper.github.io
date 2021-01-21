@@ -31,13 +31,13 @@ window.intergramId = "160411797"
 window.intergramCustomizations = {
 	titleClosed: 'Online Chat',
 	titleOpen: 'dreamfliper on telegram',
-	introMessage: 'Ask me anything :)',
+	introMessage: 'This is an anonymous chat. If you want to be reached out, please leave your email.',
 	autoResponse: 'Messages Sent',
 	autoNoResponse:
-		"It seems I'm temporarily not available. "+
-		"Please leave your contact information. I'll contact you ASAP",
-	mainColor: "#555",
-	alwaysUseFloatingButton: true
+		"It seems I'm temporarily not available. " +
+		"Please leave your email. I'll contact you ASAP",
+	mainColor: '#555',
+	alwaysUseFloatingButton: true,
 }
 
 const Navigation = styled.div`

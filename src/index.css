@@ -16,13 +16,11 @@ li{
 
 img{
   display: block;
+  max-width: 100%;
 }
 
 @media (max-width: 900px) {
   main{
     font-size: 1.1rem;
   }
-	img{
-		max-width: 100%
-	}
 }

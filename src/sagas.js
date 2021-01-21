@@ -10,15 +10,15 @@ function readText(fileBlob) {
   })
 }
 
-function dropboxDown(path) {
-  const dbx = new Dropbox({
-    accessToken: process.env.REACT_APP_DROPBOX_APIKEY,
-  })
-  return dbx.filesDownload(path)
+function dropboxDownload(path) {
+	const dbx = new Dropbox({
+		accessToken: process.env.REACT_APP_DROPBOX_APIKEY,
+	})
+	return dbx.filesDownload(path)
 }
 
 function* fetchDropbox(action) {
-  const { fileBlob, id } = yield call(dropboxDown, action.path)
+  const { fileBlob, id } = yield call(dropboxDownload, action.path)
   const resume = yield call(readText, fileBlob)
   yield put({ type: 'counter/UPDATERESUME', resume })
   yield put({ type: 'counter/SET_ARTICLEID', articleID: id.split(':')[1] })
