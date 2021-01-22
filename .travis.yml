@@ -23,4 +23,3 @@ notifications:
   webhooks:
     urls: https://fathomless-fjord-24024.herokuapp.com/notify
     on_success: change
-    on_
