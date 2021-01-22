@@ -19,7 +19,7 @@
     "redux-devtools-extension": "^2.13.2",
     "testcafe": "^1.10.1",
     "testcafe-browser-provider-puppeteer": "^1.5.2",
-    "webpack-bundle-analyzer": "^3.0.2"
+    "webpack-bundle-analyzer": "^3.3.2"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.0-14",
